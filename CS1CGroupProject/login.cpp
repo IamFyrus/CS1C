@@ -21,10 +21,19 @@ void login::buttonClickHandler()
 
 void login::loginButtonClicked()
 {
+    QString username = ui->userLabel->text();
+    QString password = ui->passwordLabel->text();
+    if(username == "manager" && password == "password")
+    {
     hide();
     delete ui;
     managerWindow = new ManagerWindow(this);
     managerWindow->show();
+    }
+    else
+    {
+        QMessageBox::warning(this, "Login", "Incorrect username or password");
+    }
 
 }
 
