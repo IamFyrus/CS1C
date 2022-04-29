@@ -30,6 +30,13 @@ void login::loginButtonClicked()
     managerWindow = new ManagerWindow(this);
     managerWindow->show();
     }
+    else if(username == "admin" && password == "password")
+    {
+    hide();
+    delete ui;
+    adminWindow = new AdminWindow(this);
+    adminWindow->show();
+    }
     else
     {
         QMessageBox::warning(this, "Login", "Incorrect username or password");

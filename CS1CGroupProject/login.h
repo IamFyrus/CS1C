@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "managerwindow.h"
+#include "adminwindow.h"
 #include <QMessageBox>
 
 
@@ -23,5 +24,6 @@ public slots:
 private:
     Ui::login *ui;
     ManagerWindow* managerWindow;
+    AdminWindow* adminWindow;
 };
 #endif // LOGIN_H
