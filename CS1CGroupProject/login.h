@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "managerwindow.h"
 #include <QMessageBox>
+#include "inventorylist.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,9 @@ public:
 public slots:
     void buttonClickHandler();
     void loginButtonClicked();
+private slots:
+    void on_inventoryButton_clicked();
+
 private:
     Ui::login *ui;
     ManagerWindow* managerWindow;

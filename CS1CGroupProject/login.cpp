@@ -37,3 +37,10 @@ void login::loginButtonClicked()
 
 }
 
+
+void login::on_inventoryButton_clicked()
+{
+    inventoryList go;
+    go.setModal(true);
+    go.exec();
+}
