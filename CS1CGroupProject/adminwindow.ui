@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="reportButton">
+   <widget class="QPushButton" name="editMemberbutton">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -27,7 +27,7 @@
      <string>Edit Members</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="reportButton_2">
+   <widget class="QPushButton" name="editItemButton">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -47,12 +47,49 @@
      <x>0</x>
      <y>0</y>
      <width>566</width>
-     <height>17</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>editMemberbutton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminWindow</receiver>
+   <slot>editMemberClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>176</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>228</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editItemButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminWindow</receiver>
+   <slot>editItemClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>379</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>386</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>editMemberClicked()</slot>
+  <slot>editItemClicked()</slot>
+ </slots>
 </ui>
