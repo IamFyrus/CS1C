@@ -2,6 +2,7 @@
 #define SELECTDAY_H
 
 #include <QMainWindow>
+#include <QSqlQueryModel>
 
 namespace Ui {
 class SelectDay;
@@ -15,8 +16,13 @@ public:
     explicit SelectDay(QWidget *parent = nullptr);
     ~SelectDay();
 
+public slots:
+    void viewReportClicked();
+
 private:
     Ui::SelectDay *ui;
+    QSqlQueryModel* itemModel;
+    QSqlQueryModel* memberModel;
 };
 
 #endif // SELECTDAY_H

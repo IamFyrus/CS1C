@@ -15,13 +15,15 @@ class parser
 public:
     parser();
 
+    void memberImport(std::string name);
+
+    void itemImport(std::string name);
+
+private:
     void init();
 
     void connect();
 
-    void import();
-
-private:
     static bool isInit;
 };
 

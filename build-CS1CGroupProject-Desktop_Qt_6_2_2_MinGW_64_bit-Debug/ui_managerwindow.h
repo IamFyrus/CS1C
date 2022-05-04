@@ -32,7 +32,7 @@ public:
     {
         if (ManagerWindow->objectName().isEmpty())
             ManagerWindow->setObjectName(QString::fromUtf8("ManagerWindow"));
-        ManagerWindow->resize(566, 306);
+        ManagerWindow->resize(577, 290);
         centralwidget = new QWidget(ManagerWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         reportButton = new QPushButton(centralwidget);
@@ -44,13 +44,15 @@ public:
         ManagerWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ManagerWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 566, 21));
+        menubar->setGeometry(QRect(0, 0, 577, 21));
         ManagerWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(ManagerWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         ManagerWindow->setStatusBar(statusbar);
 
         retranslateUi(ManagerWindow);
+        QObject::connect(memberButton, SIGNAL(clicked()), ManagerWindow, SLOT(memberButtonClicked()));
+        QObject::connect(reportButton, SIGNAL(clicked()), ManagerWindow, SLOT(displayButtonClicked()));
 
         QMetaObject::connectSlotsByName(ManagerWindow);
     } // setupUi

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>566</width>
-    <height>306</height>
+    <width>577</width>
+    <height>290</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,7 +46,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>566</width>
+     <width>577</width>
      <height>21</height>
     </rect>
    </property>
@@ -54,5 +54,42 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>memberButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ManagerWindow</receiver>
+   <slot>memberButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>332</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>437</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reportButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ManagerWindow</receiver>
+   <slot>displayButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>491</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>memberButtonClicked()</slot>
+  <slot>displayButtonClicked()</slot>
+ </slots>
 </ui>

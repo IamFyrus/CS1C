@@ -38,7 +38,8 @@ public:
     {
         if (login->objectName().isEmpty())
             login->setObjectName(QString::fromUtf8("login"));
-        login->resize(413, 275);
+        login->resize(393, 255);
+        login->setMaximumSize(QSize(400, 400));
         centralwidget = new QWidget(login);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         loginButton = new QPushButton(centralwidget);
@@ -63,7 +64,7 @@ public:
         login->setCentralWidget(centralwidget);
         menubar = new QMenuBar(login);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 413, 21));
+        menubar->setGeometry(QRect(0, 0, 393, 17));
         login->setMenuBar(menubar);
         statusbar = new QStatusBar(login);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
