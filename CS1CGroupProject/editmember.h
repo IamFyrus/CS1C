@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSqlQueryModel>
+#include <QSqlQuery>
 namespace Ui {
 class EditMember;
 }
