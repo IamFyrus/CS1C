@@ -15,6 +15,12 @@ public:
     explicit EditMember(QWidget *parent = nullptr);
     ~EditMember();
 
+public slots:
+    void addMemberButtonClicked();
+    void deleteMemberButtonClicked();
+    void editMemberButtonClicked();
+    void searchMemberButtonClicked();
+
 private:
     Ui::EditMember *ui;
 };
