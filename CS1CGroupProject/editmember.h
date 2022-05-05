@@ -2,7 +2,7 @@
 #define EDITMEMBER_H
 
 #include <QMainWindow>
-
+#include <QSqlQueryModel>
 namespace Ui {
 class EditMember;
 }
@@ -23,6 +23,7 @@ public slots:
 
 private:
     Ui::EditMember *ui;
+    QSqlQueryModel* memberModel;
 };
 
 #endif // EDITMEMBER_H

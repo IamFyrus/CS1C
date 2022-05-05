@@ -27,9 +27,9 @@ void SelectDay::viewReportClicked()
     QString date7 = "4/7/2021";
     if(input == "Day 1")
     {
-        itemModel->setQuery("SELECT itemName, quantity FROM bulkClub WHERE date =\"" + date1 + "\"");
+        itemModel->setQuery("SELECT itemName, quantity FROM item WHERE date =\"" + date1 + "\"");
         ui->itemTable->setModel(itemModel);
-        memberModel->setQuery("SELECT memberName FROM bulkClub WHERE date =\"" + date1 + "\"");
+        memberModel->setQuery("SELECT memberId FROM item WHERE date =\"" + date1 + "\"");
         ui->memberTable->setModel(memberModel);
     } else if(input == "Day 2")
     {

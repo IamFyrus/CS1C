@@ -25,5 +25,8 @@ private:
     Ui::login *ui;
     ManagerWindow* managerWindow;
     AdminWindow* adminWindow;
+    std::string memberFile;
+    std::string itemFile;
+    parser parser;
 };
 #endif // LOGIN_H

@@ -23,8 +23,8 @@ class Ui_AdminWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *reportButton;
-    QPushButton *reportButton_2;
+    QPushButton *editMemberbutton;
+    QPushButton *editItemButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -35,22 +35,24 @@ public:
         AdminWindow->resize(566, 306);
         centralwidget = new QWidget(AdminWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        reportButton = new QPushButton(centralwidget);
-        reportButton->setObjectName(QString::fromUtf8("reportButton"));
-        reportButton->setGeometry(QRect(100, 100, 151, 81));
-        reportButton_2 = new QPushButton(centralwidget);
-        reportButton_2->setObjectName(QString::fromUtf8("reportButton_2"));
-        reportButton_2->setGeometry(QRect(320, 100, 151, 81));
+        editMemberbutton = new QPushButton(centralwidget);
+        editMemberbutton->setObjectName(QString::fromUtf8("editMemberbutton"));
+        editMemberbutton->setGeometry(QRect(100, 100, 151, 81));
+        editItemButton = new QPushButton(centralwidget);
+        editItemButton->setObjectName(QString::fromUtf8("editItemButton"));
+        editItemButton->setGeometry(QRect(320, 100, 151, 81));
         AdminWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AdminWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 566, 17));
+        menubar->setGeometry(QRect(0, 0, 566, 21));
         AdminWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(AdminWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         AdminWindow->setStatusBar(statusbar);
 
         retranslateUi(AdminWindow);
+        QObject::connect(editMemberbutton, SIGNAL(clicked()), AdminWindow, SLOT(editMemberClicked()));
+        QObject::connect(editItemButton, SIGNAL(clicked()), AdminWindow, SLOT(editItemClicked()));
 
         QMetaObject::connectSlotsByName(AdminWindow);
     } // setupUi
@@ -58,8 +60,8 @@ public:
     void retranslateUi(QMainWindow *AdminWindow)
     {
         AdminWindow->setWindowTitle(QCoreApplication::translate("AdminWindow", "MainWindow", nullptr));
-        reportButton->setText(QCoreApplication::translate("AdminWindow", "Edit Members", nullptr));
-        reportButton_2->setText(QCoreApplication::translate("AdminWindow", "Edit Items", nullptr));
+        editMemberbutton->setText(QCoreApplication::translate("AdminWindow", "Edit Members", nullptr));
+        editItemButton->setText(QCoreApplication::translate("AdminWindow", "Edit Items", nullptr));
     } // retranslateUi
 
 };

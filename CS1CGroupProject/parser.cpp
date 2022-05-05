@@ -36,7 +36,7 @@ void parser::memberImport(std::string name)
 {
     QString q;
     QSqlQuery query;
-    std::string memberName, memberId, memberType, date;
+    std::string memberName, memberId, memberType, date, temp;
     std::string s;
     std::ifstream infile;
     infile.open(name);
@@ -51,9 +51,13 @@ void parser::memberImport(std::string name)
     if (!query.exec()) qWarning() << "MainWindow::DatabasePopulate - ERROR: " << query.lastError().text();
     if (query.next()) continue;
 
+    if(temp != memberName)
+    {
     s = "INSERT INTO member (memberName, memberId, memberType, expDate) VALUES (\"" + memberName + "\", \"" + memberId + "\", \"" + memberType + "\", \"" + date + "\");";
     q = QString::fromStdString(s);
     if (!query.exec(q)) qWarning() << "MainWindow::DatabasePopulate - ERROR: " << query.lastError().text();
+    temp = memberName;
+    }
     }infile.close();
 }
 void parser::itemImport(std::string name)

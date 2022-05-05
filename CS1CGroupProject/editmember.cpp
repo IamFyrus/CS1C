@@ -6,6 +6,9 @@ EditMember::EditMember(QWidget *parent) :
     ui(new Ui::EditMember)
 {
     ui->setupUi(this);
+    memberModel = new QSqlQueryModel;
+    memberModel->setQuery("SELECT * FROM member ORDER BY memberId");
+    ui->editMemberTable->setModel(memberModel);
 }
 
 EditMember::~EditMember()

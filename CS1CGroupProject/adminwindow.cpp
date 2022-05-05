@@ -12,3 +12,14 @@ AdminWindow::~AdminWindow()
 {
     delete ui;
 }
+
+void AdminWindow::editMemberClicked()
+{
+    hide();
+    delete ui;
+    editMember = new EditMember(this);
+    editMember->show();
+}
+
+void AdminWindow::editItemClicked()
+{}

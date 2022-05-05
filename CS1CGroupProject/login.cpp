@@ -6,6 +6,14 @@ login::login(QWidget *parent)
     , ui(new Ui::login)
 {
     ui->setupUi(this);
+    memberFile = "../CS1CGroupProject/member.txt";
+    parser.memberImport(memberFile); // comment out when using persistent database.
+
+    for(int i=1; i<=7; i++)
+    {
+        itemFile = "../CS1CGroupProject/day" + std::to_string(i) + ".txt";
+        parser.itemImport(itemFile);
+    }
 }
 
 login::~login()

@@ -23,9 +23,6 @@ public slots:
     void memberButtonClicked();
 private:
     Ui::ManagerWindow *ui;
-    std::string memberFile;
-    std::string itemFile;
-    parser parser;
     SelectDay* selectWindow;
     MemberInfo* memberWindow;
 };
