@@ -9,17 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    customerconvert.cpp \
     inventorylist.cpp \
     login.cpp \
     main.cpp \
     managerwindow.cpp
 
 HEADERS += \
+    customerconvert.h \
     inventorylist.h \
     login.h \
     managerwindow.h
 
 FORMS += \
+    customerconvert.ui \
     inventorylist.ui \
     login.ui \
     managerwindow.ui

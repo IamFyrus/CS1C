@@ -5,6 +5,7 @@
 #include "managerwindow.h"
 #include <QMessageBox>
 #include "inventorylist.h"
+#include "customerconvert.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,8 @@ public slots:
     void loginButtonClicked();
 private slots:
     void on_inventoryButton_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::login *ui;

@@ -44,3 +44,10 @@ void login::on_inventoryButton_clicked()
     go.setModal(true);
     go.exec();
 }
+
+void login::on_pushButton_clicked()
+{
+    customerConvert go;
+    go.setModal(true);
+    go.exec();
+}
