@@ -51,3 +51,11 @@ void login::on_pushButton_clicked()
     go.setModal(true);
     go.exec();
 }
+
+void login::on_pushButton_2_clicked()
+{
+    totalPurchases go;
+    go.setModal(true);
+    go.exec();
+
+}

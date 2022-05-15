@@ -1,0 +1,11 @@
+debug/customerconvert.o
+debug/inventorylist.o
+debug/login.o
+debug/main.o
+debug/managerwindow.o
+debug/totalpurchases.o
+debug/moc_customerconvert.o
+debug/moc_inventorylist.o
+debug/moc_login.o
+debug/moc_managerwindow.o
+debug/moc_totalpurchases.o

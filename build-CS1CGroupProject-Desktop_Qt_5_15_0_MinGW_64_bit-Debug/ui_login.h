@@ -33,6 +33,7 @@ public:
     QLabel *Password;
     QPushButton *inventoryButton;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -69,6 +70,9 @@ public:
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(70, 20, 75, 23));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(300, 20, 75, 23));
         login->setCentralWidget(centralwidget);
         menubar = new QMenuBar(login);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -94,6 +98,7 @@ public:
         Password->setText(QCoreApplication::translate("login", "Password", nullptr));
         inventoryButton->setText(QCoreApplication::translate("login", "Inventory ", nullptr));
         pushButton->setText(QCoreApplication::translate("login", "Customer Convert", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("login", "Customer Purchases", nullptr));
     } // retranslateUi
 
 };

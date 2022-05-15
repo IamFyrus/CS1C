@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include "inventorylist.h"
 #include "customerconvert.h"
+#include "totalpurchases.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -26,6 +27,8 @@ private slots:
     void on_inventoryButton_clicked();
 
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::login *ui;

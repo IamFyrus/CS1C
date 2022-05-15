@@ -13,19 +13,22 @@ SOURCES += \
     inventorylist.cpp \
     login.cpp \
     main.cpp \
-    managerwindow.cpp
+    managerwindow.cpp \
+    totalpurchases.cpp
 
 HEADERS += \
     customerconvert.h \
     inventorylist.h \
     login.h \
-    managerwindow.h
+    managerwindow.h \
+    totalpurchases.h
 
 FORMS += \
     customerconvert.ui \
     inventorylist.ui \
     login.ui \
-    managerwindow.ui
+    managerwindow.ui \
+    totalpurchases.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

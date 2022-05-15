@@ -1,0 +1,11 @@
+release/customerconvert.o
+release/inventorylist.o
+release/login.o
+release/main.o
+release/managerwindow.o
+release/totalpurchases.o
+release/moc_customerconvert.o
+release/moc_inventorylist.o
+release/moc_login.o
+release/moc_managerwindow.o
+release/moc_totalpurchases.o
