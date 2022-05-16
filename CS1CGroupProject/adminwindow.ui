@@ -89,7 +89,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>199</x>
-     <y>176</y>
+     <y>151</y>
     </hint>
     <hint type="destinationlabel">
      <x>228</x>
@@ -105,7 +105,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>379</x>
-     <y>197</y>
+     <y>151</y>
     </hint>
     <hint type="destinationlabel">
      <x>405</x>
@@ -113,9 +113,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>conversionsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AdminWindow</receiver>
+   <slot>conversionsClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>478</x>
+     <y>511</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>editMemberClicked()</slot>
   <slot>editItemClicked()</slot>
+  <slot>conversionsClicked()</slot>
  </slots>
 </ui>

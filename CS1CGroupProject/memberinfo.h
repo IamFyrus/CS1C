@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include <QTableWidget>
+#include "managerwindow.h"
 namespace Ui {
 class MemberInfo;
 }
@@ -18,6 +19,7 @@ public:
     void displayMembers();
 private slots:
     void on_expButton_clicked();
+
 
 private:
     Ui::MemberInfo *ui;

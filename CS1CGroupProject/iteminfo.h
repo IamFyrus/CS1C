@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include "parser.h"
+#include "managerwindow.h"
 
 namespace Ui {
 class ItemInfo;

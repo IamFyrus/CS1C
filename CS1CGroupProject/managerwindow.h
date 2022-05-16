@@ -6,6 +6,7 @@
 #include "parser.h"
 #include "selectday.h"
 #include "memberinfo.h"
+#include "login.h"
 
 namespace Ui {
 class ManagerWindow;
@@ -23,8 +24,8 @@ public slots:
     void memberButtonClicked();
 private:
     Ui::ManagerWindow *ui;
-    SelectDay* selectWindow;
-    MemberInfo* memberWindow;
+    //SelectDay* selectWindow;
+    //MemberInfo* memberWindow;
 };
 
 #endif // MANAGERWINDOW_H

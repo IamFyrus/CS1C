@@ -5,6 +5,7 @@
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include "adminwindow.h"
 
 namespace Ui {
 class AddPurchases;
@@ -24,6 +25,7 @@ private slots:
     void on_itemTable_clicked(const QModelIndex &index);
 
     void on_addPurchase_clicked();
+
 
 private:
     Ui::AddPurchases *ui;

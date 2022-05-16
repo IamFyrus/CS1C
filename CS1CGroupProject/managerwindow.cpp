@@ -1,6 +1,7 @@
 #include "managerwindow.h"
 #include "ui_managerwindow.h"
 
+
 ManagerWindow::ManagerWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ManagerWindow)
@@ -18,13 +19,13 @@ void ManagerWindow::displayButtonClicked()
 {
     hide();
     delete ui;
-    selectWindow = new SelectDay(this);
+    SelectDay* selectWindow = new SelectDay(this);
     selectWindow->show();
 }
 void ManagerWindow::memberButtonClicked()
 {
     hide();
     delete ui;
-    memberWindow = new MemberInfo(this);
+    MemberInfo* memberWindow = new MemberInfo(this);
     memberWindow->show();
 }

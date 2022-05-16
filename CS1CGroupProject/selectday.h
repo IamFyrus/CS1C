@@ -6,6 +6,9 @@
 #include <QSqlQuery>
 #include "parser.h"
 #include "iteminfo.h"
+#include "managerwindow.h"
+#include "searchitem.h"
+#include "searchmember.h"
 namespace Ui {
 class SelectDay;
 }
@@ -26,13 +29,17 @@ public slots:
 private slots:
     void on_itemButton_clicked();
 
+    void on_searchItem_clicked();
+
+    void on_searchMember_clicked();
+
 private:
     Ui::SelectDay *ui;
     QSqlQueryModel* itemModel;
     QSqlQueryModel* memberModel;
     std::vector <std::string> members;
     QString name;
-    ItemInfo* itemWindow;
+    //ItemInfo* itemWindow;
 };
 
 #endif // SELECTDAY_H

@@ -102,3 +102,5 @@ void MemberInfo::on_expButton_clicked()
     }
 }
 
+
+

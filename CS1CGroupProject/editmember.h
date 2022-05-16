@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include "adminwindow.h"
 namespace Ui {
 class EditMember;
 }

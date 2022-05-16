@@ -20,6 +20,8 @@ SOURCES += \
     managerwindow.cpp \
     memberinfo.cpp \
     parser.cpp \
+    searchitem.cpp \
+    searchmember.cpp \
     selectday.cpp
 
 HEADERS += \
@@ -33,6 +35,8 @@ HEADERS += \
     managerwindow.h \
     memberinfo.h \
     parser.h \
+    searchitem.h \
+    searchmember.h \
     selectday.h
 
 FORMS += \
@@ -45,6 +49,8 @@ FORMS += \
     login.ui \
     managerwindow.ui \
     memberinfo.ui \
+    searchitem.ui \
+    searchmember.ui \
     selectday.ui
 
 # Default rules for deployment.

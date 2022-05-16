@@ -439,7 +439,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
+      <y>90</y>
       <width>281</width>
       <height>381</height>
      </rect>
@@ -518,7 +518,7 @@ selection-color: rgb(0, 0, 0);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>50</y>
       <width>281</width>
       <height>31</height>
      </rect>

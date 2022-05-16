@@ -45,6 +45,8 @@ public:
     QLabel *label_5;
     QLabel *rebateLabel;
     QPushButton *itemButton;
+    QPushButton *searchItem;
+    QPushButton *searchMember;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -148,6 +150,18 @@ public:
         sizePolicy.setHeightForWidth(itemButton->sizePolicy().hasHeightForWidth());
         itemButton->setSizePolicy(sizePolicy);
         itemButton->setMaximumSize(QSize(16777215, 16777215));
+        searchItem = new QPushButton(centralwidget);
+        searchItem->setObjectName(QString::fromUtf8("searchItem"));
+        searchItem->setGeometry(QRect(110, 460, 131, 51));
+        sizePolicy.setHeightForWidth(searchItem->sizePolicy().hasHeightForWidth());
+        searchItem->setSizePolicy(sizePolicy);
+        searchItem->setMaximumSize(QSize(16777215, 16777215));
+        searchMember = new QPushButton(centralwidget);
+        searchMember->setObjectName(QString::fromUtf8("searchMember"));
+        searchMember->setGeometry(QRect(110, 530, 131, 51));
+        sizePolicy.setHeightForWidth(searchMember->sizePolicy().hasHeightForWidth());
+        searchMember->setSizePolicy(sizePolicy);
+        searchMember->setMaximumSize(QSize(16777215, 16777215));
         SelectDay->setCentralWidget(centralwidget);
         menubar = new QMenuBar(SelectDay);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -192,6 +206,8 @@ public:
         label_5->setText(QCoreApplication::translate("SelectDay", "Executive Rebate: ", nullptr));
         rebateLabel->setText(QString());
         itemButton->setText(QCoreApplication::translate("SelectDay", "View Item List", nullptr));
+        searchItem->setText(QCoreApplication::translate("SelectDay", "Search Item", nullptr));
+        searchMember->setText(QCoreApplication::translate("SelectDay", "Search Member", nullptr));
     } // retranslateUi
 
 };

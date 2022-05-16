@@ -45,13 +45,13 @@ void SelectDay::viewReportClicked()
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
 
 
-        /*QSqlQuery q("SELECT COUNT(memberType) FROM item WHERE date =\"" + date1 + "\" AND memberType =\"" + regular + "\" ORDER BY memberId");
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date1 + "\" AND memberType =\"" + regular + "\"");
         if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
         if (ui->regularCount->text() == "") ui->regularCount->setText("0");
 
-        QSqlQuery s("SELECT COUNT(memberType) FROM item WHERE date =\"" + date1 + "\" AND memberType =\"" + executive + "\" ORDER BY memberId");
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date1 + "\" AND memberType =\"" + executive + "\"");
         if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
-        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");*/
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     } else if(input == "Day 2")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date2 + "\" ORDER BY memberId");
@@ -62,10 +62,16 @@ void SelectDay::viewReportClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
 
-        QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date2 + "\" AND memberType =\"" + executive + "\"ORDER BY memberId");
+        QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date2 + "\" AND memberType =\"" + executive + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date2 + "\" AND memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
 
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date2 + "\" AND memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
 
     }else if(input == "Day 3")
     {
@@ -80,6 +86,14 @@ void SelectDay::viewReportClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date3 + "\" AND memberType =\"" + executive + "\"ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
+
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date3 + "\" AND memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date3 + "\" AND memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     }else if(input == "Day 4")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date4 + "\" ORDER BY memberId");
@@ -93,6 +107,14 @@ void SelectDay::viewReportClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date4 + "\" AND memberType =\"" + executive + "\"ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
+
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date4 + "\" AND memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date4 + "\" AND memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     }else if(input == "Day 5")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date5 + "\" ORDER BY memberId");
@@ -106,6 +128,14 @@ void SelectDay::viewReportClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date5 + "\" AND memberType =\"" + executive + "\"ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
+
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date5 + "\" AND memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date5 + "\" AND memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     }else if(input == "Day 6")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date6 + "\" ORDER BY memberId");
@@ -119,6 +149,14 @@ void SelectDay::viewReportClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date6 + "\" AND memberType =\"" + executive + "\"ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
+
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date6 + "\" AND memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date6 + "\" AND memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     }else if(input == "Day 7")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date7 + "\" ORDER BY memberId");
@@ -132,6 +170,14 @@ void SelectDay::viewReportClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date7 + "\" AND memberType =\"" + executive + "\"ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
+
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date7 + "\" AND memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date7 + "\" AND memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     }
     else
     {
@@ -149,6 +195,13 @@ void SelectDay::viewReportClicked()
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->costLabel->setText("0.00");
 
+        QSqlQuery q("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + regular + "\"");
+        if (q.next()) ui->regularCount->setText(QString::number(q.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + executive + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
     }
 }
 
@@ -175,6 +228,8 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date1 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+
     }
     else if(input == "Day 2")
     {
@@ -186,6 +241,8 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date2 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+
     }
     else if(input == "Day 3")
     {
@@ -197,6 +254,8 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date3 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+
     }
     else if(input == "Day 4")
     {
@@ -208,6 +267,8 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date4 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+
     }
     else if(input == "Day 5")
     {
@@ -219,6 +280,7 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date5 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
     }
     else if(input == "Day 6")
     {
@@ -230,6 +292,7 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date6 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
     }
     else if(input == "Day 7")
     {
@@ -241,6 +304,8 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date7 + "\" AND memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+
     }
     else
     {
@@ -252,6 +317,7 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE memberName = \"" + name + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
         if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
     }
 
 }
@@ -278,6 +344,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date1 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     } else if(input == "Day 2")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date2 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -288,6 +359,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date2 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }else if(input == "Day 3")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date3 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -298,6 +374,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date3 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }else if(input == "Day 4")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date4 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -308,6 +389,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date4 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }else if(input == "Day 5")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date5 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -318,6 +404,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date5 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }else if(input == "Day 6")
     {
         itemModel->setQuery("SELECT itemName, itemPrice quantity FROM item WHERE date =\"" + date6 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -328,6 +419,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date6 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }else if(input == "Day 7")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date7 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -338,6 +434,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date7 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }
     else
     {
@@ -349,6 +450,11 @@ void SelectDay::regularButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
         if (ui->rebateLabel->text() != "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + memberType + "\"");
+        if (s.next()) ui->regularCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->regularCount->text() == "") ui->regularCount->setText("0");
+        ui->executiveCount->setText("0");
     }
 }
 
@@ -379,6 +485,11 @@ void SelectDay::executiveButtonClicked()
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
 
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date1 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
+
     } else if(input == "Day 2")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date2 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -392,6 +503,11 @@ void SelectDay::executiveButtonClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date2 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date2 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
     }else if(input == "Day 3")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date3 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -402,9 +518,14 @@ void SelectDay::executiveButtonClicked()
         if (query.next()) ui->costLabel->setText(QString::number(query.value(0).toDouble(), 'f', 2));
         if (ui->costLabel->text() == "") ui->costLabel->setText("0.00");
 
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date3 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date3 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+        ui->regularCount->setText("0");
     }else if(input == "Day 4")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date4 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -418,6 +539,11 @@ void SelectDay::executiveButtonClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date4 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date4 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
     }else if(input == "Day 5")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date5 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -431,6 +557,11 @@ void SelectDay::executiveButtonClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date5 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date5 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
     }else if(input == "Day 6")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date6 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -444,6 +575,11 @@ void SelectDay::executiveButtonClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date6 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date6 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
     }else if(input == "Day 7")
     {
         itemModel->setQuery("SELECT itemName, itemPrice, quantity FROM item WHERE date =\"" + date7 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
@@ -457,6 +593,11 @@ void SelectDay::executiveButtonClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE date =\"" + date7 + "\" AND memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE date =\"" + date7 + "\" AND memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
     }
     else
     {
@@ -471,6 +612,11 @@ void SelectDay::executiveButtonClicked()
         QSqlQuery x("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE memberType = \"" + memberType + "\" ORDER BY memberId");
          if (x.next()) ui->rebateLabel->setText(QString::number(x.value(0).toDouble(), 'f', 2));
         if (ui->rebateLabel->text() == "") ui->rebateLabel->setText("0.00");
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + memberType + "\"");
+        if (s.next()) ui->executiveCount->setText(QString::number(s.value(0).toInt()));
+        if (ui->executiveCount->text() == "") ui->executiveCount->setText("0");
+        ui->regularCount->setText("0");
     }
 }
 
@@ -478,7 +624,37 @@ void SelectDay::on_itemButton_clicked()
 {
     hide();
     delete ui;
-    itemWindow = new ItemInfo(this);
+    ItemInfo* itemWindow = new ItemInfo(this);
     itemWindow->show();
 }
+
+
+
+
+
+
+
+
+
+
+void SelectDay::on_searchItem_clicked()
+{
+    hide();
+    delete ui;
+    SearchItem* item = new SearchItem(this);
+    item->show();
+}
+
+
+void SelectDay::on_searchMember_clicked()
+{
+    hide();
+    delete ui;
+    searchMember* member = new searchMember(this);
+    member->show();
+
+}
+
+
+
 

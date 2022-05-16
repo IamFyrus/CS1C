@@ -121,7 +121,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         editMemberTable = new QTableView(centralwidget);
         editMemberTable->setObjectName(QString::fromUtf8("editMemberTable"));
-        editMemberTable->setGeometry(QRect(20, 70, 281, 381));
+        editMemberTable->setGeometry(QRect(20, 90, 281, 381));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -154,7 +154,7 @@ public:
         editMemberTable->verticalHeader()->setHighlightSections(true);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 30, 281, 31));
+        label->setGeometry(QRect(20, 50, 281, 31));
         QFont font1;
         font1.setPointSize(16);
         label->setFont(font1);

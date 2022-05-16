@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include "adminwindow.h"
 namespace Ui {
 class EditItem;
 }
@@ -24,6 +25,7 @@ private slots:
     void on_editItemButton_clicked();
 
     void on_deleteItemButton_clicked();
+
 
 private:
     Ui::EditItem *ui;

@@ -73,3 +73,5 @@ void AddPurchases::on_addPurchase_clicked()
     else QMessageBox::information(this, "Update", "Purchase received!");
 }
 
+
+

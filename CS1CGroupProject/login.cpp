@@ -36,7 +36,7 @@ void login::loginButtonClicked()
     {
     hide();
     delete ui;
-    managerWindow = new ManagerWindow(this);
+    ManagerWindow* managerWindow = new ManagerWindow(this);
     managerWindow->show();
     }
     else if(username == "admin" && password == "password")

@@ -25,14 +25,13 @@ private slots:
 
     void on_addPurchaseButton_clicked();
 
-    void on_conversionsButton_clicked();
+    void conversionsClicked();
 
 private:
     Ui::AdminWindow *ui;
-    EditMember* editMember;
-    EditItem* editItem;
-    AddPurchases* addPurchase;
-    Conversions* conversions;
+    //EditMember* editMember;
+    //EditItem* editItem;
+    //Conversions* conversions;
 };
 
 #endif // ADMINWINDOW_H

@@ -23,7 +23,7 @@ public slots:
     void loginButtonClicked();
 private:
     Ui::login *ui;
-    ManagerWindow* managerWindow;
+    //ManagerWindow* managerWindow;
     AdminWindow* adminWindow;
     std::string memberFile;
     std::string itemFile;

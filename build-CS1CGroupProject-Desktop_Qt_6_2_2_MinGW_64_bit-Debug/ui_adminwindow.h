@@ -26,7 +26,7 @@ public:
     QPushButton *editMemberbutton;
     QPushButton *editItemButton;
     QPushButton *addPurchaseButton;
-    QPushButton *editMemberbutton_3;
+    QPushButton *conversionsButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -46,9 +46,9 @@ public:
         addPurchaseButton = new QPushButton(centralwidget);
         addPurchaseButton->setObjectName(QString::fromUtf8("addPurchaseButton"));
         addPurchaseButton->setGeometry(QRect(90, 160, 151, 81));
-        editMemberbutton_3 = new QPushButton(centralwidget);
-        editMemberbutton_3->setObjectName(QString::fromUtf8("editMemberbutton_3"));
-        editMemberbutton_3->setGeometry(QRect(330, 160, 151, 81));
+        conversionsButton = new QPushButton(centralwidget);
+        conversionsButton->setObjectName(QString::fromUtf8("conversionsButton"));
+        conversionsButton->setGeometry(QRect(330, 160, 151, 81));
         AdminWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AdminWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -61,6 +61,7 @@ public:
         retranslateUi(AdminWindow);
         QObject::connect(editMemberbutton, SIGNAL(clicked()), AdminWindow, SLOT(editMemberClicked()));
         QObject::connect(editItemButton, SIGNAL(clicked()), AdminWindow, SLOT(editItemClicked()));
+        QObject::connect(conversionsButton, SIGNAL(clicked()), AdminWindow, SLOT(conversionsClicked()));
 
         QMetaObject::connectSlotsByName(AdminWindow);
     } // setupUi
@@ -71,7 +72,7 @@ public:
         editMemberbutton->setText(QCoreApplication::translate("AdminWindow", "Edit Members", nullptr));
         editItemButton->setText(QCoreApplication::translate("AdminWindow", "Edit Items", nullptr));
         addPurchaseButton->setText(QCoreApplication::translate("AdminWindow", "Add Purchases", nullptr));
-        editMemberbutton_3->setText(QCoreApplication::translate("AdminWindow", "Check Conversions", nullptr));
+        conversionsButton->setText(QCoreApplication::translate("AdminWindow", "Check Conversions", nullptr));
     } // retranslateUi
 
 };
