@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     adminwindow.cpp \
     editmember.cpp \
+    iteminfo.cpp \
     login.cpp \
     main.cpp \
     managerwindow.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     adminwindow.h \
     editmember.h \
+    iteminfo.h \
     login.h \
     managerwindow.h \
     memberinfo.h \
@@ -30,6 +32,7 @@ HEADERS += \
 FORMS += \
     adminwindow.ui \
     editmember.ui \
+    iteminfo.ui \
     login.ui \
     managerwindow.ui \
     memberinfo.ui \

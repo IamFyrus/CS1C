@@ -20,7 +20,17 @@ public:
     void memberImport(std::string name);
 
     void itemImport(std::string name);
-    void createDatabase();
+    int getMemberNameSize();
+    std::string getMemberName(int i);
+    std::string getMemberType(int i);
+    std::string getItemName(int i);
+    std::string getItemPrice(int i);
+    int getQuantity(int i);
+    int getItemNameSize();
+
+
+
+
 
 private:
     void init();
@@ -39,7 +49,11 @@ private:
 
     std::vector<std::string> receipt;
 
-    std::vector<std::vector<std::string>> items;
+    std::vector<std::string> itemName;
+
+    std::vector<std::string> itemPrice;
+
+    std::vector<int> quantity;
 };
 
 #endif // PARSER_H

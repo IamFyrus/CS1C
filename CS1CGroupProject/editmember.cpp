@@ -34,7 +34,10 @@ void EditMember::addMemberButtonClicked()
 
 }
 void EditMember::deleteMemberButtonClicked()
-{}
+{
+
+
+}
 
 void EditMember::editMemberButtonClicked()
 {}

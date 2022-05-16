@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>876</width>
-    <height>578</height>
+    <width>912</width>
+    <height>641</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,6 +58,11 @@
       <string>Day 7</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>All Days</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -69,9 +74,7 @@
      </rect>
     </property>
     <property name="font">
-     <font>
-      <family>Arial</family>
-     </font>
+     <font/>
     </property>
     <property name="text">
      <string>Select Day to View:</string>
@@ -81,7 +84,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>290</y>
+      <y>180</y>
       <width>131</width>
       <height>51</height>
      </rect>
@@ -102,20 +105,10 @@
      <string>View Report</string>
     </property>
    </widget>
-   <widget class="QTableView" name="itemTable">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>130</y>
-      <width>281</width>
-      <height>381</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="reportLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>590</x>
       <y>60</y>
       <width>281</width>
       <height>71</height>
@@ -133,7 +126,7 @@
    <widget class="QLabel" name="reportLabel_2">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>280</x>
       <y>60</y>
       <width>281</width>
       <height>71</height>
@@ -148,7 +141,7 @@
      <string>Member Report</string>
     </property>
    </widget>
-   <widget class="QTableView" name="memberTable">
+   <widget class="QTableView" name="itemTable">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -158,13 +151,242 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>510</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Total Price: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="costLabel">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>510</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTableView" name="memberTable">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>130</y>
+      <width>281</width>
+      <height>381</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>510</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Executive Members: </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RegularButton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>250</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Regular Report</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ExecutiveButton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>320</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Executive Report</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>540</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Regular Members:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="executiveCount">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>510</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="regularCount">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>540</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>540</y>
+      <width>281</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Executive Rebate: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rebateLabel">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>540</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="itemButton">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>390</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>View Item List</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>876</width>
+     <width>912</width>
      <height>21</height>
     </rect>
    </property>
@@ -181,16 +403,50 @@
    <hints>
     <hint type="sourcelabel">
      <x>199</x>
-     <y>195</y>
+     <y>251</y>
     </hint>
     <hint type="destinationlabel">
-     <x>234</x>
-     <y>522</y>
+     <x>0</x>
+     <y>640</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RegularButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SelectDay</receiver>
+   <slot>regularButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>203</x>
+     <y>756</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ExecutiveButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SelectDay</receiver>
+   <slot>executiveButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>406</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>776</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>viewReportClicked()</slot>
+  <slot>regularButtonClicked()</slot>
+  <slot>executiveButtonClicked()</slot>
  </slots>
 </ui>

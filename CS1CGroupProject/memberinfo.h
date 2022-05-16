@@ -16,6 +16,9 @@ public:
     explicit MemberInfo(QWidget *parent = nullptr);
     ~MemberInfo();
     void displayMembers();
+private slots:
+    void on_expButton_clicked();
+
 private:
     Ui::MemberInfo *ui;
     QSqlQueryModel* memberModel;
