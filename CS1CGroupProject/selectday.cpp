@@ -17,6 +17,7 @@ SelectDay::~SelectDay()
 
 void SelectDay::viewReportClicked()
 {
+    QString name = "";
     QString input = ui->dayInput->currentText();
     QString date1 = "4/1/2021";
     QString date2 = "4/2/2021";
@@ -29,7 +30,7 @@ void SelectDay::viewReportClicked()
     {
         itemModel->setQuery("SELECT itemName, quantity FROM item WHERE date =\"" + date1 + "\"");
         ui->itemTable->setModel(itemModel);
-        memberModel->setQuery("SELECT memberId FROM item WHERE date =\"" + date1 + "\"");
+        memberModel->setQuery("SELECT memberName FROM item WHERE date =\"" + date1 + "\"");
         ui->memberTable->setModel(memberModel);
     } else if(input == "Day 2")
     {
@@ -63,7 +64,7 @@ void SelectDay::viewReportClicked()
         ui->memberTable->setModel(memberModel);
     }else if(input == "Day 7")
     {
-        memberModel->setQuery("SELECT memberId FROM item WHERE date =\"" + date1 + "\"");
+        memberModel->setQuery("SELECT memberId FROM item WHERE date =\"" + date7 + "\"");
         ui->itemTable->setModel(itemModel);
     }
 }

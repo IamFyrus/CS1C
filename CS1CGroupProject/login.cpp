@@ -9,11 +9,12 @@ login::login(QWidget *parent)
     memberFile = "../CS1CGroupProject/member.txt";
     parser.memberImport(memberFile); // comment out when using persistent database.
 
-    for(int i=1; i<=7; i++)
+   for(int i=1; i<=7; i++)
     {
         itemFile = "../CS1CGroupProject/day" + std::to_string(i) + ".txt";
         parser.itemImport(itemFile);
     }
+  //  parser.createDatabase();
 }
 
 login::~login()

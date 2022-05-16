@@ -7,8 +7,10 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlDriver>
 #include <QtSql/QSqlError>
-#include <QtSql/QSqlQuery>
+#include <QSqlQuery>
 #include <QtSql/QSqlQueryModel>
+#include <QSqlDatabase>
+#include <vector>
 
 class parser
 {
@@ -18,6 +20,7 @@ public:
     void memberImport(std::string name);
 
     void itemImport(std::string name);
+    void createDatabase();
 
 private:
     void init();
@@ -25,6 +28,18 @@ private:
     void connect();
 
     static bool isInit;
+
+    std::vector<std::string> memberName;
+
+    std::vector<std::string> memberId;
+
+    std::vector<std::string> memberType;
+
+    std::vector<std::string> expDate;
+
+    std::vector<std::string> receipt;
+
+    std::vector<std::vector<std::string>> items;
 };
 
 #endif // PARSER_H
