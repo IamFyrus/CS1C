@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "editmember.h"
+#include "edititem.h"
+#include "addpurchases.h"
+#include "conversions.h"
 
 namespace Ui {
 class AdminWindow;
@@ -17,10 +20,19 @@ public:
     ~AdminWindow();
 public slots:
     void editMemberClicked();
-    void editItemClicked();
+private slots:
+    void on_editItemButton_clicked();
+
+    void on_addPurchaseButton_clicked();
+
+    void on_conversionsButton_clicked();
+
 private:
     Ui::AdminWindow *ui;
     EditMember* editMember;
+    EditItem* editItem;
+    AddPurchases* addPurchase;
+    Conversions* conversions;
 };
 
 #endif // ADMINWINDOW_H

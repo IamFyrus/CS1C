@@ -21,5 +21,32 @@ void AdminWindow::editMemberClicked()
     editMember->show();
 }
 
-void AdminWindow::editItemClicked()
-{}
+
+void AdminWindow::on_editItemButton_clicked()
+{
+    hide();
+    delete ui;
+    editItem = new EditItem(this);
+    editItem->show();
+}
+
+
+void AdminWindow::on_addPurchaseButton_clicked()
+{
+    hide();
+    delete ui;
+    addPurchase = new AddPurchases(this);
+    addPurchase->show();
+}
+
+
+
+
+void AdminWindow::on_conversionsButton_clicked()
+{
+    hide();
+    delete ui;
+    conversions = new Conversions(this);
+    conversions->show();
+}
+

@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="editMemberbutton">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>100</y>
+      <x>90</x>
+      <y>50</y>
       <width>151</width>
       <height>81</height>
      </rect>
@@ -30,14 +30,40 @@
    <widget class="QPushButton" name="editItemButton">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>100</y>
+      <x>330</x>
+      <y>50</y>
       <width>151</width>
       <height>81</height>
      </rect>
     </property>
     <property name="text">
      <string>Edit Items</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addPurchaseButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>160</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add Purchases</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="conversionsButton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>160</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Check Conversions</string>
     </property>
    </widget>
   </widget>

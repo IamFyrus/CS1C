@@ -19,8 +19,10 @@ public:
 public slots:
     void addMemberButtonClicked();
     void deleteMemberButtonClicked();
-    void editMemberButtonClicked();
-    void searchMemberButtonClicked();
+
+
+private slots:
+    void on_editMemberTable_clicked(const QModelIndex &index);
 
 private:
     Ui::EditMember *ui;

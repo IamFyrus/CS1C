@@ -27,7 +27,7 @@ void parser::init()
         QSqlQuery query("CREATE TABLE bulkClub (memberName TEXT, memberID INTEGER, memberType TEXT, date TEXT, receipt TEXT);");
         if(!query.isActive()) qWarning() << "MainWindow::DatabaseInit - ERROR: " << query.lastError().text();
         query.exec("CREATE TABLE total (itemName TEXT, itemPrice INTEGER, quantity TEXT);");
-        query.exec("CREATE TABLE item (memberName TEXT, memberType TEXT, expDate TEXT, itemName TEXT, memberID INTEGER, date TEXT, itemPrice INTEGER, quantity INTEGER, expCost INTEGER);");
+        query.exec("CREATE TABLE item (memberName TEXT, memberType TEXT, expDate TEXT, itemName TEXT, memberID INTEGER, date TEXT, itemPrice INTEGER, quantity INTEGER, expCost INTEGER, activeMember TEXT, activeItem TEXT);");
 
 }
 
@@ -118,8 +118,8 @@ void parser::itemImport(std::string name)
         expCost = "$65.00";
     else
         expCost = "$120.00";
-
-    s = "INSERT INTO item (memberName, memberType, expDate, itemName, memberId, itemPrice, quantity, date, expCost) VALUES (\"" + memberName[i] + "\",\"" + memberType[i] + "\",\"" + expDate[i] + "\",\"" + itemNames + "\", \"" + memberIds + "\", \"" + itemPrices + "\", \"" + quantitys + "\", \"" + date + "\", \"" + expCost + "\");";
+    std::string x = "1";
+    s = "INSERT INTO item (memberName, memberType, expDate, itemName, memberId, itemPrice, quantity, date, expCost, activeMember, activeItem) VALUES (\"" + memberName[i] + "\",\"" + memberType[i] + "\",\"" + expDate[i] + "\",\"" + itemNames + "\", \"" + memberIds + "\", \"" + itemPrices + "\", \"" + quantitys + "\", \"" + date + "\", \"" + expCost + "\",\"" + x + "\",\"" + x + "\");";
     q = QString::fromStdString(s);
     if (!query.exec(q)) qWarning() << "MainWindow::DatabasePopulate - ERROR: " << query.lastError().text();
     }infile.close();

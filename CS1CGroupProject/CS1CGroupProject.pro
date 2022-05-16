@@ -9,7 +9,10 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addpurchases.cpp \
     adminwindow.cpp \
+    conversions.cpp \
+    edititem.cpp \
     editmember.cpp \
     iteminfo.cpp \
     login.cpp \
@@ -20,7 +23,10 @@ SOURCES += \
     selectday.cpp
 
 HEADERS += \
+    addpurchases.h \
     adminwindow.h \
+    conversions.h \
+    edititem.h \
     editmember.h \
     iteminfo.h \
     login.h \
@@ -30,7 +36,10 @@ HEADERS += \
     selectday.h
 
 FORMS += \
+    addpurchases.ui \
     adminwindow.ui \
+    conversions.ui \
+    edititem.ui \
     editmember.ui \
     iteminfo.ui \
     login.ui \

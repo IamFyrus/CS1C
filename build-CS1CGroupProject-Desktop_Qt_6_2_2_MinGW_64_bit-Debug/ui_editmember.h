@@ -30,8 +30,6 @@ public:
     QTableView *editMemberTable;
     QLabel *label;
     QWidget *widget;
-    QPushButton *searchMemberButton;
-    QPushButton *editMemberButton;
     QPushButton *deleteMemberButton;
     QPushButton *addMemberButton;
     QLineEdit *memberNameLine;
@@ -168,18 +166,12 @@ public:
         widget->setGeometry(QRect(390, 70, 301, 381));
         widget->setAcceptDrops(false);
         widget->setAutoFillBackground(true);
-        searchMemberButton = new QPushButton(widget);
-        searchMemberButton->setObjectName(QString::fromUtf8("searchMemberButton"));
-        searchMemberButton->setGeometry(QRect(30, 290, 101, 31));
-        editMemberButton = new QPushButton(widget);
-        editMemberButton->setObjectName(QString::fromUtf8("editMemberButton"));
-        editMemberButton->setGeometry(QRect(150, 290, 101, 31));
         deleteMemberButton = new QPushButton(widget);
         deleteMemberButton->setObjectName(QString::fromUtf8("deleteMemberButton"));
-        deleteMemberButton->setGeometry(QRect(150, 250, 101, 31));
+        deleteMemberButton->setGeometry(QRect(100, 300, 111, 41));
         addMemberButton = new QPushButton(widget);
         addMemberButton->setObjectName(QString::fromUtf8("addMemberButton"));
-        addMemberButton->setGeometry(QRect(30, 250, 101, 31));
+        addMemberButton->setGeometry(QRect(100, 240, 111, 41));
         memberNameLine = new QLineEdit(widget);
         memberNameLine->setObjectName(QString::fromUtf8("memberNameLine"));
         memberNameLine->setGeometry(QRect(110, 50, 141, 20));
@@ -216,8 +208,6 @@ public:
         retranslateUi(EditMember);
         QObject::connect(addMemberButton, SIGNAL(clicked()), EditMember, SLOT(addMemberButtonClicked()));
         QObject::connect(deleteMemberButton, SIGNAL(clicked()), EditMember, SLOT(deleteMemberButtonClicked()));
-        QObject::connect(searchMemberButton, SIGNAL(clicked()), EditMember, SLOT(searchMemberButtonClicked()));
-        QObject::connect(editMemberButton, SIGNAL(clicked()), EditMember, SLOT(editMemberButtonClicked()));
 
         QMetaObject::connectSlotsByName(EditMember);
     } // setupUi
@@ -226,8 +216,6 @@ public:
     {
         EditMember->setWindowTitle(QCoreApplication::translate("EditMember", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("EditMember", "Members", nullptr));
-        searchMemberButton->setText(QCoreApplication::translate("EditMember", "Search Member", nullptr));
-        editMemberButton->setText(QCoreApplication::translate("EditMember", "Edit Member", nullptr));
         deleteMemberButton->setText(QCoreApplication::translate("EditMember", "Delete Member", nullptr));
         addMemberButton->setText(QCoreApplication::translate("EditMember", "Add Member", nullptr));
         label_2->setText(QCoreApplication::translate("EditMember", "Member Name", nullptr));

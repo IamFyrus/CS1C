@@ -554,39 +554,13 @@ color: rgb(0, 0, 0);</string>
     <property name="autoFillBackground">
      <bool>true</bool>
     </property>
-    <widget class="QPushButton" name="searchMemberButton">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>290</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Search Member</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="editMemberButton">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>290</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Edit Member</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="deleteMemberButton">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>250</y>
-       <width>101</width>
-       <height>31</height>
+       <x>100</x>
+       <y>300</y>
+       <width>111</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -596,10 +570,10 @@ color: rgb(0, 0, 0);</string>
     <widget class="QPushButton" name="addMemberButton">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>250</y>
-       <width>101</width>
-       <height>31</height>
+       <x>100</x>
+       <y>240</y>
+       <width>111</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -743,38 +717,6 @@ color: rgb(0, 0, 0);</string>
     <hint type="destinationlabel">
      <x>423</x>
      <y>601</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>searchMemberButton</sender>
-   <signal>clicked()</signal>
-   <receiver>EditMember</receiver>
-   <slot>searchMemberButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>421</x>
-     <y>418</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>407</x>
-     <y>668</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>editMemberButton</sender>
-   <signal>clicked()</signal>
-   <receiver>EditMember</receiver>
-   <slot>editMemberButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>473</x>
-     <y>417</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>475</x>
-     <y>668</y>
     </hint>
    </hints>
   </connection>
