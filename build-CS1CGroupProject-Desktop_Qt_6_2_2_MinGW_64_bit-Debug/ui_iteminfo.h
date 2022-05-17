@@ -31,6 +31,8 @@ public:
     QLabel *label_3;
     QLabel *totalQuantity;
     QLabel *totalPrice;
+    QLabel *label_5;
+    QLabel *label_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -65,6 +67,14 @@ public:
         totalPrice->setObjectName(QString::fromUtf8("totalPrice"));
         totalPrice->setGeometry(QRect(510, 490, 151, 51));
         totalPrice->setFont(font);
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(60, 30, 121, 51));
+        label_5->setFont(font);
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(370, 30, 121, 51));
+        label_6->setFont(font);
         ItemInfo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ItemInfo);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -86,6 +96,8 @@ public:
         label_3->setText(QCoreApplication::translate("ItemInfo", "Total Quantity: ", nullptr));
         totalQuantity->setText(QString());
         totalPrice->setText(QString());
+        label_5->setText(QCoreApplication::translate("ItemInfo", "Items: ", nullptr));
+        label_6->setText(QCoreApplication::translate("ItemInfo", "Purchases: ", nullptr));
     } // retranslateUi
 
 };

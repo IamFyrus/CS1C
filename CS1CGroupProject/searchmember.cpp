@@ -6,6 +6,8 @@ searchMember::searchMember(QWidget *parent) :
     ui(new Ui::searchMember)
 {
     ui->setupUi(this);
+    ui->memberIdLine->setValidator(new QIntValidator(0, 1000, this));
+
 }
 
 searchMember::~searchMember()

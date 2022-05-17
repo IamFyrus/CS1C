@@ -10,6 +10,7 @@ EditMember::EditMember(QWidget *parent) :
     QString i = "1";
     memberModel->setQuery("SELECT DISTINCT memberName, memberId, memberType, expDate FROM item WHERE activeMember =\"" + i + "\"");
     ui->editMemberTable->setModel(memberModel);
+    ui->memberIdLine->setValidator(new QIntValidator(0, 9999999, this));
 }
 
 EditMember::~EditMember()
@@ -25,6 +26,11 @@ void EditMember::addMemberButtonClicked()
     QString name = ui->memberNameLine->text();
     QString id = ui->memberIdLine->text();
     QString type = ui->memberTypeLine->text();
+    if(type != "Regular" || type != "Executive" || type != "Regular" || type != "Executive")
+    {
+        QMessageBox::warning(this, "Member Type", "Please enter Regular or Executive");
+        return;
+    }
     QString date = ui->expDateLine->text();
     QString i = "1";
     query.prepare("SELECT * FROM bulkClub WHERE name=:name");

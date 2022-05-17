@@ -39,6 +39,8 @@ public:
     QLineEdit *itemLine;
     QLabel *label_4;
     QComboBox *dateLine;
+    QLabel *label_5;
+    QLabel *label_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -151,6 +153,16 @@ public:
         dateLine->addItem(QString());
         dateLine->setObjectName(QString::fromUtf8("dateLine"));
         dateLine->setGeometry(QRect(510, 460, 111, 31));
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(20, 20, 121, 51));
+        QFont font2;
+        font2.setPointSize(16);
+        label_5->setFont(font2);
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(380, 20, 121, 51));
+        label_6->setFont(font2);
         AddPurchases->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AddPurchases);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -182,6 +194,8 @@ public:
         dateLine->setItemText(6, QCoreApplication::translate("AddPurchases", "4/7/2021", nullptr));
         dateLine->setItemText(7, QString());
 
+        label_5->setText(QCoreApplication::translate("AddPurchases", "Members:", nullptr));
+        label_6->setText(QCoreApplication::translate("AddPurchases", "Items:", nullptr));
     } // retranslateUi
 
 };

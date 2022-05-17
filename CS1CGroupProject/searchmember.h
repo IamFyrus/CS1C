@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
-#include <QSqlError>
+#include <QIntValidator>
 namespace Ui {
 class searchMember;
 }

@@ -10,6 +10,7 @@ EditItem::EditItem(QWidget *parent) :
     QString i = "1";
     itemModel->setQuery("SELECT DISTINCT itemName, itemPrice FROM item WHERE activeItem =\"" + i + "\"");
     ui->editItemTable->setModel(itemModel);
+    ui->itemPriceLine->setValidator(new QDoubleValidator(0.00, 1000.00, 2));
 }
 
 EditItem::~EditItem()

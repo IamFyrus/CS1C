@@ -76,9 +76,9 @@ void Conversions::convert()
         if (s.next()) ui->regMembers->setText(QString::number(s.value(0).toInt()));
         if (ui->regMembers->text() == "") ui->regMembers->setText("0");
 
-        QSqlQuery p("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + regular + "\" AND conv =\"" + b + "\"  ORDER BY memberId");
-        if (s.next()) ui->execMembers->setText(QString::number(s.value(0).toInt()));
-        if (ui->execMembers->text() == "") ui->regMembers->setText("0");
+        QSqlQuery p("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + executive + "\" AND conv =\"" + b + "\"  ORDER BY memberId");
+        if (p.next()) ui->execMembers->setText(QString::number(p.value(0).toInt()));
+        if (ui->execMembers->text() == "") ui->execMembers->setText("0");
 
 
     }

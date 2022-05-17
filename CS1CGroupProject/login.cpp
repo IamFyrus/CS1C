@@ -14,7 +14,6 @@ login::login(QWidget *parent)
         itemFile = "../CS1CGroupProject/day" + std::to_string(i) + ".txt";
         parser.itemImport(itemFile);
     }
-  //  parser.createDatabase();
 }
 
 login::~login()

@@ -5,6 +5,7 @@
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 #include "adminwindow.h"
+#include <QDoubleValidator>
 namespace Ui {
 class EditItem;
 }

@@ -13,6 +13,7 @@ AddPurchases::AddPurchases(QWidget *parent) :
     ui->itemTable->setModel(itemModel);
     memberModel->setQuery("SELECT DISTINCT memberName, memberId FROM item WHERE activeMember =\"" + i + "\"");
     ui->memberTable->setModel(memberModel);
+    ui->quantityLine->setValidator(new QIntValidator(0, 100, this));
 }
 
 AddPurchases::~AddPurchases()
