@@ -49,6 +49,12 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
     <property name="text">
      <string>Add Purchases</string>
     </property>
@@ -73,7 +79,7 @@
      <x>0</x>
      <y>0</y>
      <width>566</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>
@@ -89,7 +95,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>199</x>
-     <y>151</y>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
      <x>228</x>
@@ -105,7 +111,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>379</x>
-     <y>151</y>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
      <x>405</x>

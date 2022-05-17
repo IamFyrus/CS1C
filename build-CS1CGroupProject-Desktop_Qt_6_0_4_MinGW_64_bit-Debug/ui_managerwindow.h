@@ -23,7 +23,7 @@ class Ui_ManagerWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *reportButton;
+    QPushButton *displayButton;
     QPushButton *memberButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -32,25 +32,27 @@ public:
     {
         if (ManagerWindow->objectName().isEmpty())
             ManagerWindow->setObjectName(QString::fromUtf8("ManagerWindow"));
-        ManagerWindow->resize(566, 306);
+        ManagerWindow->resize(577, 290);
         centralwidget = new QWidget(ManagerWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        reportButton = new QPushButton(centralwidget);
-        reportButton->setObjectName(QString::fromUtf8("reportButton"));
-        reportButton->setGeometry(QRect(90, 80, 151, 81));
+        displayButton = new QPushButton(centralwidget);
+        displayButton->setObjectName(QString::fromUtf8("displayButton"));
+        displayButton->setGeometry(QRect(90, 80, 151, 81));
         memberButton = new QPushButton(centralwidget);
         memberButton->setObjectName(QString::fromUtf8("memberButton"));
         memberButton->setGeometry(QRect(300, 80, 151, 81));
         ManagerWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ManagerWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 566, 21));
+        menubar->setGeometry(QRect(0, 0, 577, 17));
         ManagerWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(ManagerWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         ManagerWindow->setStatusBar(statusbar);
 
         retranslateUi(ManagerWindow);
+        QObject::connect(memberButton, SIGNAL(clicked()), ManagerWindow, SLOT(memberButtonClicked()));
+        QObject::connect(displayButton, SIGNAL(clicked()), ManagerWindow, SLOT(displayButtonClicked()));
 
         QMetaObject::connectSlotsByName(ManagerWindow);
     } // setupUi
@@ -58,7 +60,7 @@ public:
     void retranslateUi(QMainWindow *ManagerWindow)
     {
         ManagerWindow->setWindowTitle(QCoreApplication::translate("ManagerWindow", "MainWindow", nullptr));
-        reportButton->setText(QCoreApplication::translate("ManagerWindow", "Display Report", nullptr));
+        displayButton->setText(QCoreApplication::translate("ManagerWindow", "Display Report", nullptr));
         memberButton->setText(QCoreApplication::translate("ManagerWindow", "View Member Info", nullptr));
     } // retranslateUi
 

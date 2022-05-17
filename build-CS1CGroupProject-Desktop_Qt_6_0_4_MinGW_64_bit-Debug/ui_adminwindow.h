@@ -23,8 +23,10 @@ class Ui_AdminWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *reportButton;
-    QPushButton *reportButton_2;
+    QPushButton *editMemberbutton;
+    QPushButton *editItemButton;
+    QPushButton *addPurchaseButton;
+    QPushButton *conversionsButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -35,12 +37,19 @@ public:
         AdminWindow->resize(566, 306);
         centralwidget = new QWidget(AdminWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        reportButton = new QPushButton(centralwidget);
-        reportButton->setObjectName(QString::fromUtf8("reportButton"));
-        reportButton->setGeometry(QRect(100, 100, 151, 81));
-        reportButton_2 = new QPushButton(centralwidget);
-        reportButton_2->setObjectName(QString::fromUtf8("reportButton_2"));
-        reportButton_2->setGeometry(QRect(320, 100, 151, 81));
+        editMemberbutton = new QPushButton(centralwidget);
+        editMemberbutton->setObjectName(QString::fromUtf8("editMemberbutton"));
+        editMemberbutton->setGeometry(QRect(90, 50, 151, 81));
+        editItemButton = new QPushButton(centralwidget);
+        editItemButton->setObjectName(QString::fromUtf8("editItemButton"));
+        editItemButton->setGeometry(QRect(330, 50, 151, 81));
+        addPurchaseButton = new QPushButton(centralwidget);
+        addPurchaseButton->setObjectName(QString::fromUtf8("addPurchaseButton"));
+        addPurchaseButton->setGeometry(QRect(90, 160, 151, 81));
+        addPurchaseButton->setMinimumSize(QSize(50, 50));
+        conversionsButton = new QPushButton(centralwidget);
+        conversionsButton->setObjectName(QString::fromUtf8("conversionsButton"));
+        conversionsButton->setGeometry(QRect(330, 160, 151, 81));
         AdminWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AdminWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -51,6 +60,9 @@ public:
         AdminWindow->setStatusBar(statusbar);
 
         retranslateUi(AdminWindow);
+        QObject::connect(editMemberbutton, SIGNAL(clicked()), AdminWindow, SLOT(editMemberClicked()));
+        QObject::connect(editItemButton, SIGNAL(clicked()), AdminWindow, SLOT(editItemClicked()));
+        QObject::connect(conversionsButton, SIGNAL(clicked()), AdminWindow, SLOT(conversionsClicked()));
 
         QMetaObject::connectSlotsByName(AdminWindow);
     } // setupUi
@@ -58,8 +70,10 @@ public:
     void retranslateUi(QMainWindow *AdminWindow)
     {
         AdminWindow->setWindowTitle(QCoreApplication::translate("AdminWindow", "MainWindow", nullptr));
-        reportButton->setText(QCoreApplication::translate("AdminWindow", "Edit Members", nullptr));
-        reportButton_2->setText(QCoreApplication::translate("AdminWindow", "Edit Items", nullptr));
+        editMemberbutton->setText(QCoreApplication::translate("AdminWindow", "Edit Members", nullptr));
+        editItemButton->setText(QCoreApplication::translate("AdminWindow", "Edit Items", nullptr));
+        addPurchaseButton->setText(QCoreApplication::translate("AdminWindow", "Add Purchases", nullptr));
+        conversionsButton->setText(QCoreApplication::translate("AdminWindow", "Check Conversions", nullptr));
     } // retranslateUi
 
 };

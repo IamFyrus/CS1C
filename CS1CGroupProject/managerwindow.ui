@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="reportButton">
+   <widget class="QPushButton" name="displayButton">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -47,7 +47,7 @@
      <x>0</x>
      <y>0</y>
      <width>577</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>
@@ -72,7 +72,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>reportButton</sender>
+   <sender>displayButton</sender>
    <signal>clicked()</signal>
    <receiver>ManagerWindow</receiver>
    <slot>displayButtonClicked()</slot>

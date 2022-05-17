@@ -25,20 +25,65 @@ Conversions::~Conversions()
 
 void Conversions::convert()
 {
-    QString temp, type;
+    QString name, type;
     QString b = "0";
-    QString q;
     QString x;
+    int i = 0;
     QSqlQuery l;
     QString regular = "Regular";
     QString executive = "Executive";
-    int total;
-
-    parser p;
-    for(int i = 0; i < p.getMemberNameSize(); i++)
+    QSqlQuery query("SELECT DISTINCT memberName, memberType FROM item");
+    while (query.next())
     {
-        temp = QString::fromStdString(p.getMemberName(i));
-        type = QString::fromStdString(p.getMemberType(i));
+        convName.push_back(query.value(0).toString());
+        convType.push_back(query.value(1).toString());
+        i++;
+    }
+        const int SIZE = i;
+
+    for(i = 0; i < SIZE; i++)
+    {
+        name = convName[i];
+        type = convType[i];
+        QSqlQuery q("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE memberName  =\"" + name + "\" AND memberType =\"" + type + "\" ORDER BY memberId");
+        if (q.next())
+        {
+            if(type == regular)
+            {
+                if(q.value(0).toInt() >= 55)
+                {
+                    x = "UPDATE item SET conv =\"" + b + "\" WHERE memberName =\"" + name + "\";";
+                    if (!l.exec(x)) qWarning() << "MainWindow::DatabasePopulate - ERROR: ";
+                }
+            }else
+            {
+                if(q.value(0).toInt() < 55)
+                {
+                    x = "UPDATE item SET conv =\"" + b + "\" WHERE memberName =\"" + name + "\";";
+                    if (!l.exec(x)) qWarning() << "MainWindow::DatabasePopulate - ERROR: ";
+                }
+            }
+        }
+
+        regModel->setQuery("SELECT  memberName, memberType FROM item WHERE memberType =\"" + regular + "\" AND conv =\"" + b + "\"  ORDER BY memberId");
+        ui->regConversions->setModel(regModel);
+
+        execModel->setQuery("SELECT  memberName, memberType FROM item WHERE memberType =\"" + executive + "\" AND conv =\"" + b + "\" ORDER BY memberId");
+        ui->execConversions->setModel(execModel);
+
+
+        QSqlQuery s("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + regular + "\" AND conv =\"" + b + "\"  ORDER BY memberId");
+        if (s.next()) ui->regMembers->setText(QString::number(s.value(0).toInt()));
+        if (ui->regMembers->text() == "") ui->regMembers->setText("0");
+
+        QSqlQuery p("SELECT COUNT(DISTINCT memberName) FROM item WHERE memberType =\"" + regular + "\" AND conv =\"" + b + "\"  ORDER BY memberId");
+        if (s.next()) ui->execMembers->setText(QString::number(s.value(0).toInt()));
+        if (ui->execMembers->text() == "") ui->regMembers->setText("0");
+
+
+    }
+}
+    /*{
         if(type == regular)
         {
         QSqlQuery m("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE memberName = \"" + temp + "\" AND memberType = \"" + type + "\" ORDER BY memberId");
@@ -50,9 +95,9 @@ void Conversions::convert()
         {
             total = 0;
         }
-        if(total >= 120)
+        if(total >= 55)
         {
-            regConv.push_back(regular);
+
             x = "UPDATE item SET conv =\"" + b + "\" WHERE memberName =\"" + temp + "\"";
 
 
@@ -70,7 +115,7 @@ void Conversions::convert()
         {
             total = 0;
         }
-        if(total <= 120)
+        if(total <= 55)
         {
 
             x = "UPDATE item SET conv =\"" + b + "\" WHERE memberName =\"" + temp + "\"";
@@ -80,5 +125,5 @@ void Conversions::convert()
         }
     }
     }
+*/
 
-}

@@ -27,11 +27,9 @@ class Ui_EditMember
 {
 public:
     QWidget *centralwidget;
-    QTableView *rest_tableView;
+    QTableView *editMemberTable;
     QLabel *label;
     QWidget *widget;
-    QPushButton *searchMemberButton;
-    QPushButton *editMemberButton;
     QPushButton *deleteMemberButton;
     QPushButton *addMemberButton;
     QLineEdit *memberNameLine;
@@ -49,7 +47,7 @@ public:
     {
         if (EditMember->objectName().isEmpty())
             EditMember->setObjectName(QString::fromUtf8("EditMember"));
-        EditMember->resize(800, 600);
+        EditMember->resize(760, 600);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -121,42 +119,42 @@ public:
         EditMember->setAutoFillBackground(true);
         centralwidget = new QWidget(EditMember);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        rest_tableView = new QTableView(centralwidget);
-        rest_tableView->setObjectName(QString::fromUtf8("rest_tableView"));
-        rest_tableView->setGeometry(QRect(20, 70, 241, 381));
+        editMemberTable = new QTableView(centralwidget);
+        editMemberTable->setObjectName(QString::fromUtf8("editMemberTable"));
+        editMemberTable->setGeometry(QRect(20, 90, 281, 381));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(rest_tableView->sizePolicy().hasHeightForWidth());
-        rest_tableView->setSizePolicy(sizePolicy);
+        sizePolicy.setHeightForWidth(editMemberTable->sizePolicy().hasHeightForWidth());
+        editMemberTable->setSizePolicy(sizePolicy);
         QFont font;
         font.setPointSize(11);
-        rest_tableView->setFont(font);
-        rest_tableView->setFocusPolicy(Qt::NoFocus);
-        rest_tableView->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+        editMemberTable->setFont(font);
+        editMemberTable->setFocusPolicy(Qt::NoFocus);
+        editMemberTable->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);\n"
 "alternate-background-color: rgb(225, 225, 225);\n"
 "selection-background-color: rgb(159, 11, 25);\n"
 "selection-color: rgb(0, 0, 0);"));
-        rest_tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        rest_tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
-        rest_tableView->setAutoScroll(false);
-        rest_tableView->setAutoScrollMargin(5);
-        rest_tableView->setDragDropOverwriteMode(false);
-        rest_tableView->setAlternatingRowColors(true);
-        rest_tableView->setSelectionMode(QAbstractItemView::SingleSelection);
-        rest_tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
-        rest_tableView->setShowGrid(false);
-        rest_tableView->setGridStyle(Qt::SolidLine);
-        rest_tableView->setSortingEnabled(false);
-        rest_tableView->horizontalHeader()->setVisible(false);
-        rest_tableView->horizontalHeader()->setMinimumSectionSize(50);
-        rest_tableView->horizontalHeader()->setDefaultSectionSize(200);
-        rest_tableView->verticalHeader()->setVisible(false);
-        rest_tableView->verticalHeader()->setHighlightSections(true);
+        editMemberTable->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        editMemberTable->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+        editMemberTable->setAutoScroll(false);
+        editMemberTable->setAutoScrollMargin(5);
+        editMemberTable->setDragDropOverwriteMode(false);
+        editMemberTable->setAlternatingRowColors(true);
+        editMemberTable->setSelectionMode(QAbstractItemView::SingleSelection);
+        editMemberTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+        editMemberTable->setShowGrid(false);
+        editMemberTable->setGridStyle(Qt::SolidLine);
+        editMemberTable->setSortingEnabled(false);
+        editMemberTable->horizontalHeader()->setVisible(false);
+        editMemberTable->horizontalHeader()->setMinimumSectionSize(50);
+        editMemberTable->horizontalHeader()->setDefaultSectionSize(200);
+        editMemberTable->verticalHeader()->setVisible(false);
+        editMemberTable->verticalHeader()->setHighlightSections(true);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 30, 241, 31));
+        label->setGeometry(QRect(20, 50, 281, 31));
         QFont font1;
         font1.setPointSize(16);
         label->setFont(font1);
@@ -165,49 +163,43 @@ public:
         label->setAlignment(Qt::AlignCenter);
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(320, 80, 241, 381));
+        widget->setGeometry(QRect(390, 70, 301, 381));
         widget->setAcceptDrops(false);
         widget->setAutoFillBackground(true);
-        searchMemberButton = new QPushButton(widget);
-        searchMemberButton->setObjectName(QString::fromUtf8("searchMemberButton"));
-        searchMemberButton->setGeometry(QRect(40, 310, 91, 18));
-        editMemberButton = new QPushButton(widget);
-        editMemberButton->setObjectName(QString::fromUtf8("editMemberButton"));
-        editMemberButton->setGeometry(QRect(140, 310, 91, 18));
         deleteMemberButton = new QPushButton(widget);
         deleteMemberButton->setObjectName(QString::fromUtf8("deleteMemberButton"));
-        deleteMemberButton->setGeometry(QRect(140, 270, 91, 18));
+        deleteMemberButton->setGeometry(QRect(100, 300, 111, 41));
         addMemberButton = new QPushButton(widget);
         addMemberButton->setObjectName(QString::fromUtf8("addMemberButton"));
-        addMemberButton->setGeometry(QRect(40, 270, 91, 18));
+        addMemberButton->setGeometry(QRect(100, 240, 111, 41));
         memberNameLine = new QLineEdit(widget);
         memberNameLine->setObjectName(QString::fromUtf8("memberNameLine"));
-        memberNameLine->setGeometry(QRect(90, 50, 113, 20));
+        memberNameLine->setGeometry(QRect(110, 50, 141, 20));
         memberIdLine = new QLineEdit(widget);
         memberIdLine->setObjectName(QString::fromUtf8("memberIdLine"));
-        memberIdLine->setGeometry(QRect(90, 90, 113, 20));
+        memberIdLine->setGeometry(QRect(110, 90, 141, 20));
         memberTypeLine = new QLineEdit(widget);
         memberTypeLine->setObjectName(QString::fromUtf8("memberTypeLine"));
-        memberTypeLine->setGeometry(QRect(90, 130, 113, 20));
+        memberTypeLine->setGeometry(QRect(110, 130, 141, 20));
         expDateLine = new QLineEdit(widget);
         expDateLine->setObjectName(QString::fromUtf8("expDateLine"));
-        expDateLine->setGeometry(QRect(90, 170, 113, 20));
+        expDateLine->setGeometry(QRect(110, 170, 141, 20));
         label_2 = new QLabel(widget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(20, 50, 61, 21));
+        label_2->setGeometry(QRect(20, 50, 81, 21));
         label_3 = new QLabel(widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(20, 90, 61, 21));
         label_6 = new QLabel(widget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(20, 130, 61, 21));
+        label_6->setGeometry(QRect(20, 130, 91, 21));
         label_7 = new QLabel(widget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(20, 170, 61, 21));
+        label_7->setGeometry(QRect(20, 170, 91, 21));
         EditMember->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EditMember);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 17));
+        menubar->setGeometry(QRect(0, 0, 760, 17));
         EditMember->setMenuBar(menubar);
         statusbar = new QStatusBar(EditMember);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -216,8 +208,6 @@ public:
         retranslateUi(EditMember);
         QObject::connect(addMemberButton, SIGNAL(clicked()), EditMember, SLOT(addMemberButtonClicked()));
         QObject::connect(deleteMemberButton, SIGNAL(clicked()), EditMember, SLOT(deleteMemberButtonClicked()));
-        QObject::connect(searchMemberButton, SIGNAL(clicked()), EditMember, SLOT(searchMemberButtonClicked()));
-        QObject::connect(editMemberButton, SIGNAL(clicked()), EditMember, SLOT(editMemberButtonClicked()));
 
         QMetaObject::connectSlotsByName(EditMember);
     } // setupUi
@@ -226,8 +216,6 @@ public:
     {
         EditMember->setWindowTitle(QCoreApplication::translate("EditMember", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("EditMember", "Members", nullptr));
-        searchMemberButton->setText(QCoreApplication::translate("EditMember", "Search Member", nullptr));
-        editMemberButton->setText(QCoreApplication::translate("EditMember", "Edit Member", nullptr));
         deleteMemberButton->setText(QCoreApplication::translate("EditMember", "Delete Member", nullptr));
         addMemberButton->setText(QCoreApplication::translate("EditMember", "Add Member", nullptr));
         label_2->setText(QCoreApplication::translate("EditMember", "Member Name", nullptr));

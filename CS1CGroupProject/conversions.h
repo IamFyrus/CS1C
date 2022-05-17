@@ -23,8 +23,8 @@ public:
 private slots:
 private:
     Ui::Conversions *ui;
-    std::vector <QString> regConv;
-    std::vector <QString> execConv;
+    std::vector <QString> convName;
+    std::vector <QString> convType;
     QSqlQueryModel* regModel;
     QSqlQueryModel* execModel;
 };
