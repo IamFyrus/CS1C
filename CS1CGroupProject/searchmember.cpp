@@ -1,6 +1,10 @@
 #include "searchmember.h"
 #include "ui_searchmember.h"
 
+/* ==== searchMember::Constructor ==================================
+    Constructor used to initialize the ui and set a QIntValidator
+    so that the lineEdit memberIdLine can only contain numbers.
+================================================================== */
 searchMember::searchMember(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::searchMember)
@@ -10,11 +14,19 @@ searchMember::searchMember(QWidget *parent) :
 
 }
 
+/* ==== searchMember::Destructor ==================================
+    Destructor used to delete the ui.
+================================================================== */
 searchMember::~searchMember()
 {
     delete ui;
 }
 
+/* ==== searchMember::on_searchName_clicked ======================
+    on_searchName_clicked used to take text of memberNameLine and
+    display the total amount spent and the quantity of items
+    bought by the indicated user.
+================================================================== */
 void searchMember::on_searchName_clicked()
 {
     QString input = ui->memberNameLine->text();
@@ -29,7 +41,11 @@ void searchMember::on_searchName_clicked()
     if (ui->quantLabel->text() == "") ui->quantLabel->setText("0");
 }
 
-
+/* ==== searchMember::on_searchId_clicked ========================
+    on_searchId_clicked used to take text of memberIdLine and
+    display the total amount spent and the quantity of items
+    bought by the indicated user.
+================================================================== */
 void searchMember::on_searchId_clicked()
 {
     QString input = ui->memberIdLine->text();

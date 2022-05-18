@@ -12,17 +12,42 @@ namespace Ui {
 class ManagerWindow;
 }
 
+/*! \class ManagerWindow
+ *  \brief Allows manager to select a choice.
+ *  This class allows the manager to select to either view the main report, or view member information.
+ */
 class ManagerWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    /*! Constructor
+     *
+     *  Constructor used to initialize the ui.
+     */
     explicit ManagerWindow(QWidget *parent = nullptr);
+
+    /*! Destructor
+     *
+     *  Destructor used to delete the ui.
+     */
     ~ManagerWindow();
 public slots:
+    /*! @fn  void displayButtonClicked();
+     *
+     *  Method used to open the SelectDay ui.
+     */
     void displayButtonClicked();
+
+    /*! @fn  void memberButtonClicked();
+     *
+     *  Method used to open the MemberInfo ui.
+     */
     void memberButtonClicked();
 private:
+    /*! @var Ui::ManagerWindow *ui;
+     *  ManagerWindow ui;
+     */
     Ui::ManagerWindow *ui;
     //SelectDay* selectWindow;
     //MemberInfo* memberWindow;

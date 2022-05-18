@@ -1,6 +1,13 @@
 #include "addpurchases.h"
 #include "ui_addpurchases.h"
 
+
+/* ==== AddPurchases::Constructor =================================
+    Constructor used to initialize SQLQueryModels itemModel and
+    memberModel, set itemTable and membetTable to display the
+    current items and members, and create a QIntValidator so only
+    numbers can be typed into the quantity lineEdit.
+================================================================== */
 AddPurchases::AddPurchases(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AddPurchases)
@@ -15,12 +22,21 @@ AddPurchases::AddPurchases(QWidget *parent) :
     ui->memberTable->setModel(memberModel);
     ui->quantityLine->setValidator(new QIntValidator(0, 100, this));
 }
-
+/* ==== AddPurchases::Destructor =================================
+    Destructor used to delete the ui and QSqlQueryModels itemModel
+    and memberModel.
+================================================================== */
 AddPurchases::~AddPurchases()
 {
     delete ui;
+    delete itemModel;
+    delete memberModel;
 }
 
+/* ==== AddPurchases::on_memberTable_clicked =====================
+    on_memberTable_clicked used to set the text in the lineEdit
+    memberLine equal to the name of the member that was clicked.
+================================================================== */
 void AddPurchases::on_memberTable_clicked(const QModelIndex &index)
 {
     QString name;
@@ -28,7 +44,10 @@ void AddPurchases::on_memberTable_clicked(const QModelIndex &index)
     ui->memberLine->setText(name);
 }
 
-
+/* ==== AddPurchases::on_itemTable_clicked =======================
+    on_memberTable_clicked used to set the text in the lineEdit
+    itemLine equal to the name of the item that was clicked.
+================================================================== */
 void AddPurchases::on_itemTable_clicked(const QModelIndex &index)
 {
     QString name;
@@ -37,6 +56,13 @@ void AddPurchases::on_itemTable_clicked(const QModelIndex &index)
 }
 
 
+/* ==== AddPurchases::on_addPurchase_clicked =====================
+    on_addPurchase_clicked used to get the text in the lineEdits
+    itemLine, memberLine, dateLine, and quantityLine, and create a
+    purchase for the user input based on the information entered
+    in these line edits. It stores all of the member and purchase
+    informatin into the database.
+================================================================== */
 void AddPurchases::on_addPurchase_clicked()
 {
     QString q;

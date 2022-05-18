@@ -1,5 +1,18 @@
 #include "parser.h"
+
+/* ==== parser::isInit ===========================================
+    Private static member used to allow only allow one connect/init
+    method call across all Database instances. Initialized to false
+    to allow the first constructor to execute the connect and init
+    methods.
+================================================================== */
 bool parser::isInit = false;
+
+/* ==== parser::Constructor ======================================
+    Constructor used to connect and initialize the databases.
+    After first initialization the database does not
+    reinitialize instances.
+================================================================== */
 parser::parser()
 {
     if (!isInit) {
@@ -9,6 +22,11 @@ parser::parser()
     }
 }
 
+/* ==== parser::connect ==========================================
+    connect used to connect the program to SQLite so that the
+    database can be created. The database can be set to either
+    be persistent, or initialize on each run.
+================================================================== */
 void parser::connect()
 {
     const QString DRIVER("QSQLITE");
@@ -16,12 +34,15 @@ void parser::connect()
     if(QSqlDatabase::isDriverAvailable(DRIVER)) {
         QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
         db.setDatabaseName(":memory:"); //initializes database on each run.
-       //db.setDatabaseName("bulkClub"); // Uses memberDB database
+       //db.setDatabaseName("bulkClub"); // Uses bulkClub database
 
         if(!db.open()) qWarning() << "MainWindow::DatabaseConnect - ERROR: " << db.lastError().text();
     } else qWarning() << "MainWindow::DatabaseConnect - ERROR: no driver " << DRIVER << " available";
 }
 
+/* ==== parser::init ==========================================
+    init used to initialize all tables used in the database.
+=============================================================== */
 void parser::init()
 {
         QSqlQuery query("CREATE TABLE bulkClub (memberName TEXT, memberID INTEGER, memberType TEXT, date TEXT, receipt TEXT);");
@@ -32,7 +53,10 @@ void parser::init()
 }
 
 
-
+/* ==== parser::memberImport ==================================
+    memberImport used to read in all member data from input
+    files provided.
+=============================================================== */
 void parser::memberImport(std::string name)
 {
     QString q;
@@ -84,6 +108,12 @@ void parser::memberImport(std::string name)
     }*/
     }infile.close();
 }
+
+/* ==== parser::itemImport ==================================
+    itemImport used to read in all item data from input
+    files provided and store it and the member information
+    into the database.
+=============================================================== */
 void parser::itemImport(std::string name)
 {
     QString q;
@@ -126,6 +156,7 @@ void parser::itemImport(std::string name)
 
 }
 
+/*
 int parser::getMemberNameSize()
 {
  return memberName.size();
@@ -155,3 +186,4 @@ std::string parser::getItemPrice(int i)
 {
  return itemPrice[i];
 }
+*/

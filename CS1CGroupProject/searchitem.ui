@@ -52,7 +52,7 @@
       <string>Item Name</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="editItemButton">
+    <widget class="QPushButton" name="searchItemButton">
      <property name="geometry">
       <rect>
        <x>90</x>

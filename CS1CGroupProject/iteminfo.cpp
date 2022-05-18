@@ -1,6 +1,13 @@
 #include "iteminfo.h"
 #include "ui_iteminfo.h"
 
+
+/* ==== ItemInfo::Constructor ====================================
+    Constructor used to initialize the ui and QSqlQueryModels
+    itemModel and quantModel. It also uses helper function
+    displayItems to display the current item names in the table
+    itemTable.
+================================================================== */
 ItemInfo::ItemInfo(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ItemInfo)
@@ -9,15 +16,23 @@ ItemInfo::ItemInfo(QWidget *parent) :
     itemModel = new QSqlQueryModel;
     quantModel = new QSqlQueryModel;
     displayItems();
-
-
 }
 
+/* ==== ItemInfo::Destructor =====================================
+    Destructor used to delete the ui and QSqlQueryModels itemModel
+    and quantModel.
+================================================================== */
 ItemInfo::~ItemInfo()
 {
     delete ui;
+    delete itemModel;
+    delete quantModel;
 }
 
+/* ==== ItemInfo::displayItems ===================================
+    displayItems used to display the current item names in the
+    table itemTable.
+================================================================== */
 void ItemInfo::displayItems()
 {
     itemModel->setQuery("SELECT DISTINCT itemName FROM item ORDER BY itemName");
@@ -64,6 +79,15 @@ void ItemInfo::displayItems()
 
 }
 */
+
+/* ==== ItemInfo::on_itemTable_clicked ===========================
+    on_itemTable_clicked used to display the values memberName,
+    itemPrice, and quantity from each purchase of the indicated
+    item onto table quantTable. It also calculates and displays
+    the total sum of all of the purchases in label totalPrice,
+    and calculates and displays the total quantity of the
+    indicated item purchases in label totalQuantity.
+================================================================== */
 
 void ItemInfo::on_itemTable_clicked(const QModelIndex &index)
 {

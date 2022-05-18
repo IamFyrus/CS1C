@@ -1,6 +1,12 @@
 #include "memberinfo.h"
 #include "ui_memberinfo.h"
 
+/* ==== MemberInfo::Constructor ==================================
+    Constructor used to initialize the ui and QSqlQueryModel
+    memberModel. It also uses helper function displayMembers to
+    display all of the current members and member information
+    available in the database.
+================================================================== */
 MemberInfo::MemberInfo(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MemberInfo)
@@ -10,17 +16,31 @@ MemberInfo::MemberInfo(QWidget *parent) :
     displayMembers();
 }
 
+/* ==== MemberInfo::Destructor ===================================
+    Destructor used to delete the ui and QSqlQueryModel
+    memberModel.
+================================================================== */
 MemberInfo::~MemberInfo()
 {
     delete ui;
+    delete memberModel;
 }
 
+/* ==== MemberInfo::displayMembers ===============================
+    displayMembers used to display all of the current members and
+    member information available in the database.
+================================================================== */
 void MemberInfo::displayMembers()
 {
     memberModel->setQuery("SELECT DISTINCT memberName, memberId, memberType, expDate, expCost FROM item ORDER BY expDate");
     ui->memberTable->setModel(memberModel);
 }
 
+/* ==== MemberInfo::on_expButton_clicked =========================
+    on_expButton_clicked used to display all of the current
+    memberswhose memberships will expire in the month indicated in
+    monthInput.
+================================================================== */
 void MemberInfo::on_expButton_clicked()
 {
     QString input = ui->monthInput->currentText();

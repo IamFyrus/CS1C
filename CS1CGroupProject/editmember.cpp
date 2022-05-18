@@ -1,6 +1,14 @@
 #include "editmember.h"
 #include "ui_editmember.h"
 
+
+/* ==== EditMember::Constructor ==================================
+    Constructor used to initialize the ui and QSqlQueryModel
+    memberModel. It also sets the table editMemberTable to display
+    the existing member names, ids, types, and expiration dates
+    from the database, and uses a QIntValidator to make
+    memberIdLine only able to contain numbers.
+================================================================== */
 EditMember::EditMember(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::EditMember)
@@ -12,12 +20,21 @@ EditMember::EditMember(QWidget *parent) :
     ui->editMemberTable->setModel(memberModel);
     ui->memberIdLine->setValidator(new QIntValidator(0, 9999999, this));
 }
-
+/* ==== EditMember::Destructor ===================================
+    Destructor used to delete the ui and QSqlQueryModel
+    memberModel.
+================================================================== */
 EditMember::~EditMember()
 {
     delete ui;
+    delete memberModel;
 }
-
+/* ==== EditMember::addMemberButtonClicked =======================
+    addMemberButtonClicked is used to get text from the lineEdits
+    memberNameLine, memberIdLine, memberTypeLine, and expDateLine,
+    and enter a new member into the database using the information
+    provided.
+================================================================== */
 void EditMember::addMemberButtonClicked()
 {
 
@@ -41,6 +58,15 @@ void EditMember::addMemberButtonClicked()
     ui->editMemberTable->setModel(memberModel);
 
 }
+
+/* ==== EditMember::deleteMemberButtonClicked ====================
+    deleteMemberButtonClicked is used to get text from the lineEdits
+    memberNameLine, memberIdLine, memberTypeLine, and expDateLine,
+    and delete an existing member from the database using the
+    information provided. This members past purchases will still
+    remain, but they will no longer show up for any member based
+    information or be able to make any new purchases.
+================================================================== */
 void EditMember::deleteMemberButtonClicked()
 {
     QString name = ui->memberNameLine->text();
@@ -62,6 +88,12 @@ void EditMember::deleteMemberButtonClicked()
 
 
 
+/* ==== EditMember::on_editMemberTable_clicked ===================
+    on_editMemberTable_clicked is used to get the text selected
+    from the table editMemberTable and place the according
+    information into lineEdits memberNameLine, memberIdLine,
+    memberTypeLine, and expDateLine.
+================================================================== */
 void EditMember::on_editMemberTable_clicked(const QModelIndex &index)
 {
     QString name;

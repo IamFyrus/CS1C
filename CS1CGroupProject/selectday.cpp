@@ -1,6 +1,11 @@
 #include "selectday.h"
 #include "ui_selectday.h"
 
+
+/* ==== SelectDay::Constructor ==================================
+    Constructor used to initialize the ui and QSqlQueryModels
+    itemModel and memberModel.
+================================================================== */
 SelectDay::SelectDay(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SelectDay)
@@ -10,11 +15,21 @@ SelectDay::SelectDay(QWidget *parent) :
     memberModel = new QSqlQueryModel;
 }
 
+/* ==== SelectDay::Destructor ====================================
+    Destructor used to delete the ui and QSqlQueryModels
+    itemModel and memberModel.
+================================================================== */
 SelectDay::~SelectDay()
 {
     delete ui;
+    delete itemModel;
+    delete memberModel;
 }
 
+/* ==== SelectDay::viewReportClicked =============================
+    viewReportClicked used to view the main report of members who
+    shopped and items purchased on indicated day.
+================================================================== */
 void SelectDay::viewReportClicked()
 {
     QString name = "";
@@ -205,7 +220,10 @@ void SelectDay::viewReportClicked()
     }
 }
 
-
+/* ==== SelectDay::on_memberTable_clicked ========================
+    on_memberTable_clicked used to view the report of items
+    purchased by the member selected on the indicated day.
+================================================================== */
 void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
     QString memberType = "Executive";
     QString input = ui->dayInput->currentText();
@@ -321,6 +339,12 @@ void SelectDay::on_memberTable_clicked(const QModelIndex &index) {
     }
 
 }
+
+/* ==== SelectDay::regularButtonClicked ==========================
+    regularButtonClicked used to view the report of members who
+    shopped and the items purchased on the indicated day by
+    members with the regular membership.
+================================================================== */
 void SelectDay::regularButtonClicked()
 {
     QString memberType = "Regular";
@@ -458,6 +482,11 @@ void SelectDay::regularButtonClicked()
     }
 }
 
+/* ==== SelectDay::executiveButtonClicked ==========================
+    executiveButtonClicked used to view the report of members who
+    shopped and the items purchased on the indicated day by
+    members with the executive membership.
+================================================================== */
 void SelectDay::executiveButtonClicked()
 {
     QString memberType = "Executive";
@@ -620,36 +649,38 @@ void SelectDay::executiveButtonClicked()
     }
 }
 
+/* ==== SelectDay::on_itemButton_clicked ==========================
+    on_itemButton_clicked used to hide current ui and show
+    ItemInfo ui.
+================================================================== */
 void SelectDay::on_itemButton_clicked()
 {
     hide();
-    delete ui;
+    //delete ui;
     ItemInfo* itemWindow = new ItemInfo(this);
     itemWindow->show();
 }
 
-
-
-
-
-
-
-
-
-
+/* ==== SelectDay::on_searchItem_clicked ==========================
+    on_searchItem_clicked used to hide current ui and show
+    SearchItem ui.
+================================================================== */
 void SelectDay::on_searchItem_clicked()
 {
     hide();
-    delete ui;
+    //delete ui;
     SearchItem* item = new SearchItem(this);
     item->show();
 }
 
-
+/* ==== SelectDay::on_searchMember_clicked ==========================
+    on_searchMember_clicked used to hide current ui and show
+    searchMember ui.
+================================================================== */
 void SelectDay::on_searchMember_clicked()
 {
     hide();
-    delete ui;
+   //delete ui;
     searchMember* member = new searchMember(this);
     member->show();
 

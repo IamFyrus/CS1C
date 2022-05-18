@@ -28,7 +28,7 @@ public:
     QWidget *widget;
     QLineEdit *itemNameLine;
     QLabel *label_2;
-    QPushButton *editItemButton;
+    QPushButton *searchItemButton;
     QLabel *label_3;
     QLabel *label_4;
     QLabel *priceLabel;
@@ -54,9 +54,9 @@ public:
         label_2 = new QLabel(widget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(20, 70, 81, 21));
-        editItemButton = new QPushButton(widget);
-        editItemButton->setObjectName(QString::fromUtf8("editItemButton"));
-        editItemButton->setGeometry(QRect(90, 110, 111, 41));
+        searchItemButton = new QPushButton(widget);
+        searchItemButton->setObjectName(QString::fromUtf8("searchItemButton"));
+        searchItemButton->setGeometry(QRect(90, 110, 111, 41));
         label_3 = new QLabel(widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(30, 190, 121, 51));
@@ -93,7 +93,7 @@ public:
     {
         SearchItem->setWindowTitle(QCoreApplication::translate("SearchItem", "MainWindow", nullptr));
         label_2->setText(QCoreApplication::translate("SearchItem", "Item Name", nullptr));
-        editItemButton->setText(QCoreApplication::translate("SearchItem", "Search Item", nullptr));
+        searchItemButton->setText(QCoreApplication::translate("SearchItem", "Search Item", nullptr));
         label_3->setText(QCoreApplication::translate("SearchItem", "Total Price: ", nullptr));
         label_4->setText(QCoreApplication::translate("SearchItem", "Total Quantity:", nullptr));
         priceLabel->setText(QString());

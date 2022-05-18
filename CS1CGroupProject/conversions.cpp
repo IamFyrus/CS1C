@@ -1,6 +1,14 @@
 #include "conversions.h"
 #include "ui_conversions.h"
 
+/* ==== Conversions::Constructor =================================
+    Constructor used to initialize the ui and QSqlQueryModels
+    regModel and execModel. It also uses the helper function
+    convert to calculate which members should convert their
+    memberships. It then setsw the tables regConversions and
+    execConversions to display which members of each type, regular
+    and executive, should convert their memberships.
+================================================================== */
 Conversions::Conversions(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Conversions)
@@ -17,11 +25,22 @@ Conversions::Conversions(QWidget *parent) :
     execModel->setQuery("SELECT DISTINCT memberName, memberType FROM item WHERE memberType =\"" + executive + "\" AND conv =\"" + b + "\"");
     ui->execConversions->setModel(execModel);
 }
-
+/* ==== Conversions::Destructor ==================================
+    Destructor used to delete the ui and QSqlQueryModels regModel
+    and execModel.
+================================================================== */
 Conversions::~Conversions()
 {
     delete ui;
+    delete regModel;
+    delete execModel;
 }
+
+/* ==== Conversions::convert =====================================
+    convert used to calculate the amount of regular and executive
+    members who should convert their membership to the opposite
+    type.
+================================================================== */
 
 void Conversions::convert()
 {
@@ -83,47 +102,5 @@ void Conversions::convert()
 
     }
 }
-    /*{
-        if(type == regular)
-        {
-        QSqlQuery m("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE memberName = \"" + temp + "\" AND memberType = \"" + type + "\" ORDER BY memberId");
-        if (m.next())
-        {
-            total = m.value(0).toInt();
-        }
-        else
-        {
-            total = 0;
-        }
-        if(total >= 55)
-        {
 
-            x = "UPDATE item SET conv =\"" + b + "\" WHERE memberName =\"" + temp + "\"";
-
-
-         if (!l.exec(x)) qWarning() << "MainWindow::DatabasePopulate - ERROR: ";
-        }
-        else
-        {
-        QSqlQuery query("SELECT SUM(itemPrice * quantity * 0.02) FROM item WHERE memberName = \"" + temp + "\")");
-        if (query.next())
-        {
-            execConv.push_back(executive);
-            total = query.value(0).toInt();
-        }
-        else
-        {
-            total = 0;
-        }
-        if(total <= 55)
-        {
-
-            x = "UPDATE item SET conv =\"" + b + "\" WHERE memberName =\"" + temp + "\"";
-
-        }
-         if (!query.exec(x)) qWarning() << "MainWindow::DatabasePopulate - ERROR: ";
-        }
-    }
-    }
-*/
 
