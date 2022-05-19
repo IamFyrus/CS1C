@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include "managerwindow.h"
+
 
 namespace Ui {
 class SearchItem;
@@ -37,6 +39,11 @@ private slots:
      *  Method used to search for item indicated in lineEdit itemNameLine. It will display the total price of all of the purchases of the indicated item in label priceLabel, and show the total quantity bought of the indicated item in label quantLabel.
      */
     void on_searchItemButton_clicked();
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::SearchItem *ui;

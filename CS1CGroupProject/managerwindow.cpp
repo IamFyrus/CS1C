@@ -41,3 +41,12 @@ void ManagerWindow::memberButtonClicked()
     MemberInfo* memberWindow = new MemberInfo(this);
     memberWindow->show();
 }
+
+void ManagerWindow::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    login* loginWindow = new login(this);
+    loginWindow->show();
+}
+

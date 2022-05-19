@@ -6,10 +6,11 @@
  *
  *  This Qt program is designed to allow a store to keep track of their members and items
  *  @authors Cyrus Azad
- *  @authors Julie Nazzario
- *  @authors Neda
- *  @authors Saul
- *  @authors Parsa
+ *  @authors Saul Moreno
+ *  @authors Juli Nazzario
+ *  @authors Parsa Banaei
+ *  @authors Neda Mohseni
+ *
  */
 int main(int argc, char *argv[])
 {

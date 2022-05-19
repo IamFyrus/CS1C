@@ -6,6 +6,7 @@
 #include "edititem.h"
 #include "addpurchases.h"
 #include "conversions.h"
+#include "login.h"
 
 namespace Ui {
 class AdminWindow;
@@ -54,6 +55,11 @@ private slots:
      *  Method used to open the conversions ui, and hide the current ui.
      */
     void conversionsClicked();
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::AdminWindow *ui;

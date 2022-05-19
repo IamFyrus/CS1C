@@ -38,6 +38,12 @@ public:
     void convert();
 
 private slots:
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
+
 private:
     /*! @var Ui::Conversions *ui;
      *  Conversions ui;

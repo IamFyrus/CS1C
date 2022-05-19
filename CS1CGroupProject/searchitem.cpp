@@ -40,3 +40,12 @@ void SearchItem::on_searchItemButton_clicked()
     if (ui->quantLabel->text() == "") ui->quantLabel->setText("0");
 }
 
+
+void SearchItem::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    SelectDay* selectWindow = new SelectDay(this);
+    selectWindow->show();
+}
+

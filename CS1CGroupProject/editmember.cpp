@@ -40,19 +40,24 @@ void EditMember::addMemberButtonClicked()
 
     QString q;
     QSqlQuery query;
+    QString expCost;
     QString name = ui->memberNameLine->text();
     QString id = ui->memberIdLine->text();
     QString type = ui->memberTypeLine->text();
-    if(type != "Regular" || type != "Executive" || type != "Regular" || type != "Executive")
+    if(type != "Regular" && type != "Executive")
     {
         QMessageBox::warning(this, "Member Type", "Please enter Regular or Executive");
         return;
     }
     QString date = ui->expDateLine->text();
     QString i = "1";
+    if(type == "Regular")
+        expCost = "$65.00";
+    else
+        expCost = "$120.00";
     query.prepare("SELECT * FROM bulkClub WHERE name=:name");
     query.bindValue(":name", name);
-    q = "INSERT INTO item (memberName, memberId, memberType, expDate, itemName, itemPrice, quantity, date, expCost, activeMember, activeItem) VALUES (\"" + name + "\", \"" + id + "\", \"" + type + "\", \"" + date + "\", \"" + " " + "\", \"" + " " + "\", \""+ " " + "\", \"" + "\", \"" + "\", \"" + i + "\", \"" + i + "\");";
+    q = "INSERT INTO item (memberName, memberId, memberType, expDate, expCost, itemName, itemPrice, quantity, date, activeMember, activeItem) VALUES (\"" + name + "\", \"" + id + "\", \"" + type + "\", \"" + date + "\", \"" + expCost + "\", \"" + " " + "\", \""+ " " + "\", \"" + "\", \"" + "\", \"" + i + "\", \"" + i + "\");";
     if (!query.exec(q)) qWarning() << "MainWindow::DatabasePopulate - ERROR: ";
     memberModel->setQuery("SELECT DISTINCT memberName, memberId, memberType, expDate FROM item WHERE activeMember =\"" + i + "\"");
     ui->editMemberTable->setModel(memberModel);
@@ -109,5 +114,14 @@ void EditMember::on_editMemberTable_clicked(const QModelIndex &index)
     QSqlQuery y("SELECT DISTINCT expDate FROM item WHERE memberName = \"" + name + "\"");
     if (y.next()) ui->expDateLine->setText(y.value(0).toString());
 
+}
+
+
+void EditMember::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    AdminWindow* adminWindow = new AdminWindow(this);
+    adminWindow->show();
 }
 

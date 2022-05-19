@@ -48,12 +48,17 @@ private slots:
      */
     void on_itemTable_clicked(const QModelIndex &index);
 
-    /*! @fn     void on_addPurchase_clicked()
+    /*! @fn void on_addPurchase_clicked()
      *
      *  Method used to get the text in the lineEdits itemLine, memberLine, dateLine, and quantityLine, and create a purchase for the user input based on the information entered in these line edits. It stores all of the member and purchase information into the database.
      */
     void on_addPurchase_clicked();
 
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::AddPurchases *ui;

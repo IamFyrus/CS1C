@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
@@ -33,6 +34,7 @@ public:
     QLabel *reportLabel_3;
     QLabel *regMembers;
     QLabel *execMembers;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -132,6 +134,9 @@ public:
         execMembers->setObjectName(QString::fromUtf8("execMembers"));
         execMembers->setGeometry(QRect(620, 480, 191, 51));
         execMembers->setFont(font1);
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         Conversions->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Conversions);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -155,6 +160,7 @@ public:
         reportLabel_3->setText(QCoreApplication::translate("Conversions", "Executive Conversions:", nullptr));
         regMembers->setText(QString());
         execMembers->setText(QString());
+        returnButton->setText(QCoreApplication::translate("Conversions", "Return", nullptr));
     } // retranslateUi
 
 };

@@ -23,8 +23,9 @@ class Ui_ManagerWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *reportButton;
+    QPushButton *displayButton;
     QPushButton *memberButton;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -35,12 +36,15 @@ public:
         ManagerWindow->resize(577, 290);
         centralwidget = new QWidget(ManagerWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        reportButton = new QPushButton(centralwidget);
-        reportButton->setObjectName(QString::fromUtf8("reportButton"));
-        reportButton->setGeometry(QRect(90, 80, 151, 81));
+        displayButton = new QPushButton(centralwidget);
+        displayButton->setObjectName(QString::fromUtf8("displayButton"));
+        displayButton->setGeometry(QRect(90, 80, 151, 81));
         memberButton = new QPushButton(centralwidget);
         memberButton->setObjectName(QString::fromUtf8("memberButton"));
         memberButton->setGeometry(QRect(300, 80, 151, 81));
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         ManagerWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ManagerWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -52,7 +56,7 @@ public:
 
         retranslateUi(ManagerWindow);
         QObject::connect(memberButton, SIGNAL(clicked()), ManagerWindow, SLOT(memberButtonClicked()));
-        QObject::connect(reportButton, SIGNAL(clicked()), ManagerWindow, SLOT(displayButtonClicked()));
+        QObject::connect(displayButton, SIGNAL(clicked()), ManagerWindow, SLOT(displayButtonClicked()));
 
         QMetaObject::connectSlotsByName(ManagerWindow);
     } // setupUi
@@ -60,8 +64,9 @@ public:
     void retranslateUi(QMainWindow *ManagerWindow)
     {
         ManagerWindow->setWindowTitle(QCoreApplication::translate("ManagerWindow", "MainWindow", nullptr));
-        reportButton->setText(QCoreApplication::translate("ManagerWindow", "Display Report", nullptr));
+        displayButton->setText(QCoreApplication::translate("ManagerWindow", "Display Report", nullptr));
         memberButton->setText(QCoreApplication::translate("ManagerWindow", "View Member Info", nullptr));
+        returnButton->setText(QCoreApplication::translate("ManagerWindow", "Return", nullptr));
     } // retranslateUi
 
 };

@@ -37,6 +37,7 @@ public:
     QLabel *label_3;
     QPushButton *editItemButton;
     QLabel *label;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -115,6 +116,9 @@ public:
         label->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);"));
         label->setAlignment(Qt::AlignCenter);
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         EditItem->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EditItem);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -138,6 +142,7 @@ public:
         label_3->setText(QCoreApplication::translate("EditItem", "Item Price", nullptr));
         editItemButton->setText(QCoreApplication::translate("EditItem", "Edit Item", nullptr));
         label->setText(QCoreApplication::translate("EditItem", "Inventory", nullptr));
+        returnButton->setText(QCoreApplication::translate("EditItem", "Return", nullptr));
     } // retranslateUi
 
 };

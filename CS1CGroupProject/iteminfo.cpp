@@ -103,3 +103,12 @@ void ItemInfo::on_itemTable_clicked(const QModelIndex &index)
     if (ui->totalQuantity->text() == "") ui->totalQuantity->setText("0.00");
 }
 
+
+void ItemInfo::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    SelectDay* selectWindow = new SelectDay(this);
+    selectWindow->show();
+}
+

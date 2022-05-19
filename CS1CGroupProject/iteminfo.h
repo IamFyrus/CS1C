@@ -47,6 +47,11 @@ private slots:
          */
         void on_itemTable_clicked(const QModelIndex &index);
 
+        /*! @fn void on_returnButton_clicked()
+         *
+         *  Method used to return to the previous window.
+         */
+        void on_returnButton_clicked();
 
 private:
         /*! @var Ui::ItemInfo *ui;

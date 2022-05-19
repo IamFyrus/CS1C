@@ -32,6 +32,7 @@ public:
     QComboBox *monthInput;
     QLabel *label_2;
     QPushButton *expButton;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -73,6 +74,9 @@ public:
         expButton = new QPushButton(centralwidget);
         expButton->setObjectName(QString::fromUtf8("expButton"));
         expButton->setGeometry(QRect(40, 280, 221, 61));
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         MemberInfo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MemberInfo);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -107,6 +111,7 @@ public:
 
         label_2->setText(QCoreApplication::translate("MemberInfo", "Select Month", nullptr));
         expButton->setText(QCoreApplication::translate("MemberInfo", "View Expiration Dates", nullptr));
+        returnButton->setText(QCoreApplication::translate("MemberInfo", "Return", nullptr));
     } // retranslateUi
 
 };

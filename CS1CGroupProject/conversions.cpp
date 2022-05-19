@@ -104,3 +104,12 @@ void Conversions::convert()
 }
 
 
+
+void Conversions::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    AdminWindow* adminWindow = new AdminWindow(this);
+    adminWindow->show();
+}
+

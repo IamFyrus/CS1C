@@ -47,6 +47,7 @@ public:
     QPushButton *itemButton;
     QPushButton *searchItem;
     QPushButton *searchMember;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -162,6 +163,9 @@ public:
         sizePolicy.setHeightForWidth(searchMember->sizePolicy().hasHeightForWidth());
         searchMember->setSizePolicy(sizePolicy);
         searchMember->setMaximumSize(QSize(16777215, 16777215));
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         SelectDay->setCentralWidget(centralwidget);
         menubar = new QMenuBar(SelectDay);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -208,6 +212,7 @@ public:
         itemButton->setText(QCoreApplication::translate("SelectDay", "View Item List", nullptr));
         searchItem->setText(QCoreApplication::translate("SelectDay", "Search Item", nullptr));
         searchMember->setText(QCoreApplication::translate("SelectDay", "Search Member", nullptr));
+        returnButton->setText(QCoreApplication::translate("SelectDay", "Return", nullptr));
     } // retranslateUi
 
 };

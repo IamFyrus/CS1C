@@ -49,12 +49,6 @@ private:
      *  login ui;
      */
     Ui::login *ui;
-    //ManagerWindow* managerWindow;
-
-    /*! @var AdminWindow* adminWindow;
-     *  Helps display admin window ui.
-     */
-    AdminWindow* adminWindow;
 
     /*! @var std::string memberFile;
      *  file containing member information;

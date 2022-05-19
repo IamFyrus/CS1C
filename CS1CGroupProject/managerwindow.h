@@ -44,6 +44,13 @@ public slots:
      *  Method used to open the MemberInfo ui.
      */
     void memberButtonClicked();
+private slots:
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
+
 private:
     /*! @var Ui::ManagerWindow *ui;
      *  ManagerWindow ui;

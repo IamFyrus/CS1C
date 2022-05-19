@@ -27,6 +27,7 @@ public:
     QPushButton *editItemButton;
     QPushButton *addPurchaseButton;
     QPushButton *conversionsButton;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -46,9 +47,13 @@ public:
         addPurchaseButton = new QPushButton(centralwidget);
         addPurchaseButton->setObjectName(QString::fromUtf8("addPurchaseButton"));
         addPurchaseButton->setGeometry(QRect(90, 160, 151, 81));
+        addPurchaseButton->setMinimumSize(QSize(50, 50));
         conversionsButton = new QPushButton(centralwidget);
         conversionsButton->setObjectName(QString::fromUtf8("conversionsButton"));
         conversionsButton->setGeometry(QRect(330, 160, 151, 81));
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         AdminWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(AdminWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -73,6 +78,7 @@ public:
         editItemButton->setText(QCoreApplication::translate("AdminWindow", "Edit Items", nullptr));
         addPurchaseButton->setText(QCoreApplication::translate("AdminWindow", "Add Purchases", nullptr));
         conversionsButton->setText(QCoreApplication::translate("AdminWindow", "Check Conversions", nullptr));
+        returnButton->setText(QCoreApplication::translate("AdminWindow", "Return", nullptr));
     } // retranslateUi
 
 };

@@ -65,7 +65,7 @@ void login::loginButtonClicked()
     {
     hide();
   //  delete ui;
-    adminWindow = new AdminWindow(this);
+    AdminWindow* adminWindow = new AdminWindow(this);
     adminWindow->show();
     }
     else

@@ -36,6 +36,7 @@ public:
     QLabel *label_6;
     QLabel *priceLabel;
     QLabel *quantLabel;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -91,6 +92,9 @@ public:
         quantLabel->setObjectName(QString::fromUtf8("quantLabel"));
         quantLabel->setGeometry(QRect(410, 350, 121, 51));
         quantLabel->setFont(font1);
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         searchMember->setCentralWidget(centralwidget);
         menubar = new QMenuBar(searchMember);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -116,6 +120,7 @@ public:
         label_6->setText(QCoreApplication::translate("searchMember", "Total Quantity: ", nullptr));
         priceLabel->setText(QString());
         quantLabel->setText(QString());
+        returnButton->setText(QCoreApplication::translate("searchMember", "Return", nullptr));
     } // retranslateUi
 
 };

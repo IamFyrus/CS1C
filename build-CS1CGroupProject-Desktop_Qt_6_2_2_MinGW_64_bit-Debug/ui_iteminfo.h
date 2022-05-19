@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
@@ -33,6 +34,7 @@ public:
     QLabel *totalPrice;
     QLabel *label_5;
     QLabel *label_6;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -75,6 +77,9 @@ public:
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(370, 30, 121, 51));
         label_6->setFont(font);
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         ItemInfo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ItemInfo);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -98,6 +103,7 @@ public:
         totalPrice->setText(QString());
         label_5->setText(QCoreApplication::translate("ItemInfo", "Items: ", nullptr));
         label_6->setText(QCoreApplication::translate("ItemInfo", "Purchases: ", nullptr));
+        returnButton->setText(QCoreApplication::translate("ItemInfo", "Return", nullptr));
     } // retranslateUi
 
 };

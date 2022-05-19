@@ -111,3 +111,12 @@ void EditItem::on_deleteItemButton_clicked()
 
 
 
+
+void EditItem::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    AdminWindow* adminWindow = new AdminWindow(this);
+    adminWindow->show();
+}
+

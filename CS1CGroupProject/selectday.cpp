@@ -689,3 +689,12 @@ void SelectDay::on_searchMember_clicked()
 
 
 
+
+void SelectDay::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    ManagerWindow* managerWindow = new ManagerWindow(this);
+    managerWindow->show();
+}
+

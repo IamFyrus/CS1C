@@ -42,6 +42,11 @@ private slots:
      */
     void on_expButton_clicked();
 
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::MemberInfo *ui;

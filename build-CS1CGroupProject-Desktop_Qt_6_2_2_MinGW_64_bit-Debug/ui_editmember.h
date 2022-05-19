@@ -40,6 +40,7 @@ public:
     QLabel *label_3;
     QLabel *label_6;
     QLabel *label_7;
+    QPushButton *returnButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -196,6 +197,9 @@ public:
         label_7 = new QLabel(widget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(20, 170, 91, 21));
+        returnButton = new QPushButton(centralwidget);
+        returnButton->setObjectName(QString::fromUtf8("returnButton"));
+        returnButton->setGeometry(QRect(0, 0, 80, 24));
         EditMember->setCentralWidget(centralwidget);
         menubar = new QMenuBar(EditMember);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -222,6 +226,7 @@ public:
         label_3->setText(QCoreApplication::translate("EditMember", "Member Id", nullptr));
         label_6->setText(QCoreApplication::translate("EditMember", "Member Type", nullptr));
         label_7->setText(QCoreApplication::translate("EditMember", "Expiration Date", nullptr));
+        returnButton->setText(QCoreApplication::translate("EditMember", "Return", nullptr));
     } // retranslateUi
 
 };

@@ -53,6 +53,11 @@ private slots:
      */
     void on_deleteItemButton_clicked();
 
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::EditItem *ui;

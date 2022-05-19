@@ -67,3 +67,12 @@ void AdminWindow::conversionsClicked()
     conversions->show();
 }
 
+
+void AdminWindow::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    login* loginWindow = new login(this);
+    loginWindow->show();
+}
+

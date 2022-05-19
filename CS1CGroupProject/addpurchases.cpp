@@ -102,3 +102,12 @@ void AddPurchases::on_addPurchase_clicked()
 
 
 
+
+void AddPurchases::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    AdminWindow* adminWindow = new AdminWindow(this);
+    adminWindow->show();
+}
+

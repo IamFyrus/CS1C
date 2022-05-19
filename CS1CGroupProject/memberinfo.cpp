@@ -124,3 +124,12 @@ void MemberInfo::on_expButton_clicked()
 
 
 
+
+void MemberInfo::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    ManagerWindow* managerWindow = new ManagerWindow(this);
+    managerWindow->show();
+}
+

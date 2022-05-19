@@ -5,6 +5,8 @@
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 #include <QIntValidator>
+#include "managerwindow.h"
+
 namespace Ui {
 class searchMember;
 }
@@ -42,6 +44,11 @@ private slots:
      *  Method used to take text of memberIdLine and display the total amount spent and the quantity of items bought by the indicated user.
      */
     void on_searchId_clicked();
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::searchMember *ui;

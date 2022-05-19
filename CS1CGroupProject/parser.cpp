@@ -34,7 +34,7 @@ void parser::connect()
     if(QSqlDatabase::isDriverAvailable(DRIVER)) {
         QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
         db.setDatabaseName(":memory:"); //initializes database on each run.
-       //db.setDatabaseName("bulkClub"); // Uses bulkClub database
+      //db.setDatabaseName("bulkClubDB"); // Uses bulkClub database
 
         if(!db.open()) qWarning() << "MainWindow::DatabaseConnect - ERROR: " << db.lastError().text();
     } else qWarning() << "MainWindow::DatabaseConnect - ERROR: no driver " << DRIVER << " available";

@@ -10,7 +10,7 @@ searchMember::searchMember(QWidget *parent) :
     ui(new Ui::searchMember)
 {
     ui->setupUi(this);
-    ui->memberIdLine->setValidator(new QIntValidator(0, 1000, this));
+    ui->memberIdLine->setValidator(new QIntValidator(0, 9999999, this));
 
 }
 
@@ -57,5 +57,14 @@ void searchMember::on_searchId_clicked()
     QSqlQuery q("SELECT SUM(quantity) FROM item WHERE memberId =\"" + input + "\"");
     if (q.next()) ui->quantLabel->setText(QString::number(q.value(0).toDouble()));
     if (ui->quantLabel->text() == "") ui->quantLabel->setText("0");
+}
+
+
+void searchMember::on_returnButton_clicked()
+{
+    hide();
+    //delete ui;
+    SelectDay* selectWindow = new SelectDay(this);
+    selectWindow->show();
 }
 

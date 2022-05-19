@@ -51,6 +51,11 @@ private slots:
      *  Method used to get the text selected from the table editMemberTable and place the according information into lineEdits memberNameLine, memberIdLine, memberTypeLine, and expDateLine.
      */
     void on_editMemberTable_clicked(const QModelIndex &index);
+    /*! @fn void on_returnButton_clicked()
+     *
+     *  Method used to return to the previous window.
+     */
+    void on_returnButton_clicked();
 
 private:
     /*! @var Ui::EditMember *ui;
